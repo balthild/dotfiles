@@ -26,5 +26,5 @@ patch:
   app_options/+:
     flow.launcher.exe:
       ascii_mode: true
-    conemu64.exe:
+    windowsterminal.exe:
       ascii_mode: true
