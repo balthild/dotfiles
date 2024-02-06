@@ -38,3 +38,7 @@ Requires [starship](https://github.com/starship/starship) and [carapace](https:/
 ```shell
 scoop install elvish starship carapace-bin
 ```
+
+### Rime
+
+Requires [rime-ice](https://github.com/iDvel/rime-ice).
