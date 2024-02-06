@@ -1,0 +1,57 @@
+# 配合雾凇拼音使用 https://github.com/iDvel/rime-ice
+patch:
+  punctuator/half_shape/+:
+    __include: /punctuations
+    "[": "「"
+    "]": "」"
+    "{": "『"
+    "}": "』"
+  punctuator/full_shape/+:
+    __include: /punctuations
+    "[": "“"
+    "]": "”"
+    "{": "‘"
+    "}": "’"
+
+  ascii_composer/+:
+    good_old_caps_lock: true
+    import_preset: default
+    switch_key/+:
+      Caps_Lock: noop
+      Control_L: noop
+      Control_R: noop
+      Eisu_toggle: clear
+      Shift_L: commit_code
+      Shift_R: commit_code
+
+  key_binder/bindings/+:
+    __patch:
+      - key_bindings:/paging_with_comma_period
+      - /bindings
+
+  reduce_english_filter/+:
+    mode: all
+    idx: 5
+
+  switches:
+    - name: full_shape
+      states: [ 半, 全 ]
+      reset: 0
+    - name: traditionalization
+      states: [ 简, 繁 ]
+      reset: 0
+    - name: ascii_punct
+      states: [ ¥, $ ]
+      reset: 0
+    - name: emoji
+      states: [ ☠️, 😀 ]
+      reset: 1
+
+
+punctuations:
+  "/": "、"
+  "`": "·"
+
+bindings:
+  __append:
+    - { when: always, accept: Shift+space, toggle: full_shape }

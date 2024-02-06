@@ -1,0 +1,21 @@
+[user]
+	name = Balthild
+	email = ibalthild@gmail.com
+[http]
+	#proxy = http://127.0.0.1:7890
+[https]
+	#proxy = http://127.0.0.1:7890
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+[credential]
+	helper = manager
+[credential "helperselector"]
+	selected = manager
+[pull]
+	rebase = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

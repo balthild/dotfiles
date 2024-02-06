@@ -1,0 +1,9 @@
+.vscode/
+.fleet/
+.idea/
+*.iml
+
+*~
+.DS_*
+
+_ignored.*

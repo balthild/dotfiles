@@ -1,0 +1,14 @@
+[git.files]
+git = "~"
+
+[elvish.files]
+elvish = "~/AppData/Roaming/elvish"
+
+[rime.files]
+Rime = "~/AppData/Roaming/Rime"
+
+[flow.files]
+FlowLauncher = "~/AppData/Roaming/FlowLauncher"
+
+[nvim.files]
+nvim = "~/AppData/Local/nvim"
