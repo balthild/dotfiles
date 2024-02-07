@@ -16,13 +16,18 @@ set edit:insert:binding[Alt-Right] = { edit:move-dot-eol }
 set E:LC_ALL = 'C.UTF-8'
 set E:QUOTING_STYLE = 'literal'
 
-fn add-path {|p|
+fn append-paths {|p|
   use path
   set paths = [$@paths (path:abs $p)]
 }
 
+fn prepend-paths {|p|
+  use path
+  set paths = [(path:abs $p) $@paths]
+}
+
 # Use GNU coreutils from Git for Windows
-add-path ~/scoop/apps/git/current/usr/bin
+prepend-paths ~/scoop/apps/git/current/usr/bin
 
 # Enable colored output for ls and grep
 fn ls {|@a| e:ls --color=auto $@a }

@@ -4,13 +4,13 @@ Managed with [dotter](https://github.com/SuperCuber/dotter).
 
 ## Deploy in Windows
 
-Install dependencies
+Install dependencies:
 
 ```shell
 scoop install git dotter
 ```
 
-Clone the repository to `~/.dotfiles`
+Clone the repository to `~/.dotfiles`:
 
 ```shell
 cd ~
@@ -18,18 +18,20 @@ git clone https://github.com/balthild/dotfiles .dotfiles
 cd .dotfiles
 ```
 
-Create `~/dotfiles/.dotter/local.toml` and include the packages to be deployed
+Create `~/.dotfiles/.dotter/local.toml` and specify the packages to be deployed:
 
 ```toml
 includes = []
-packages = ["elvish", "git", "rime", "flow", "nvim"]
+packages = ["git", "elvish", "rime", "flow", "nvim"]
 ```
 
-Deploy them
+Deploy:
 
 ```shell
 dotter deploy
 ```
+
+## Package Dependencies
 
 ### Elvish
 
