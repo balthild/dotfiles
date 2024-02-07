@@ -12,7 +12,7 @@ set edit:insert:binding[Ctrl-Right] = { edit:move-dot-right-alnum-word }
 set edit:insert:binding[Alt-Left] = { edit:move-dot-sol }
 set edit:insert:binding[Alt-Right] = { edit:move-dot-eol }
 
-# Enable colored output for GNU ls and grep
+# Set output styles and charset for GNU coreutils
 set E:LC_ALL = 'C.UTF-8'
 set E:QUOTING_STYLE = 'literal'
 
@@ -21,11 +21,13 @@ fn add-path {|p|
   set paths = [$@paths (path:abs $p)]
 }
 
-# GNU coreutils shipped with Git for Windows
+# Use GNU coreutils from Git for Windows
 add-path ~/scoop/apps/git/current/usr/bin
 
+# Enable colored output for ls and grep
 fn ls {|@a| e:ls --color=auto $@a }
 fn ll {|@a| e:ls --color=auto -l $@a }
 fn la {|@a| e:ls --color=auto -la $@a }
 fn grep {|@a| e:grep --color $@a }
+
 fn vim {|@a| e:nvim $@a }
