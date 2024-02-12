@@ -1,14 +1,15 @@
 [git.files]
-git = "~"
+"git" = "~"
 
 [elvish.files]
-elvish = "~/AppData/Roaming/elvish"
+"elvish" = "~/AppData/Roaming/elvish"
+"starship.toml" = "~/.config/starship.toml"
 
 [rime.files]
-Rime = "~/AppData/Roaming/Rime"
+"Rime" = "~/AppData/Roaming/Rime"
 
 [flow.files]
-FlowLauncher = "~/AppData/Roaming/FlowLauncher"
+"FlowLauncher" = "~/AppData/Roaming/FlowLauncher"
 
 [nvim.files]
-nvim = "~/AppData/Local/nvim"
+"nvim" = "~/AppData/Local/nvim"
