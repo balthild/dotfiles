@@ -1,7 +1,10 @@
-.vscode/
 .fleet/
 .idea/
 *.iml
+
+.vscode/*
+!.vscode/.gitignore
+!.vscode/extensions.json
 
 *~
 .DS_*

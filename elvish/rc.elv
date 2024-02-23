@@ -6,7 +6,8 @@ set E:CARAPACE_MATCH = 'CASE_INSENSITIVE'
 set edit:completion:matcher[argument] = {|seed| edit:match-prefix $seed &ignore-case=$true }
 
 # Quick cursor moving
-set edit:insert:binding[Ctrl-Backspace] = { edit:kill-small-word-left }
+set edit:insert:binding[Ctrl-Backspace] = { edit:kill-left-alnum-word }
+set edit:insert:binding[Ctrl-Delete] = { edit:kill-left-alnum-word }
 set edit:insert:binding[Ctrl-Left] = { edit:move-dot-left-alnum-word }
 set edit:insert:binding[Ctrl-Right] = { edit:move-dot-right-alnum-word }
 set edit:insert:binding[Alt-Left] = { edit:move-dot-sol }
