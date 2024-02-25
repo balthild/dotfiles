@@ -37,3 +37,5 @@ fn la {|@a| e:ls --color=auto -la $@a }
 fn grep {|@a| e:grep --color $@a }
 
 fn vim {|@a| e:nvim $@a }
+
+fn read-key { python -c 'import msvcrt; print(msvcrt.getch())' }
