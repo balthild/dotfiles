@@ -1,0 +1,40 @@
+/* Move bookmark toolbar to bottom of window */
+:root:not([inDOMFullscreen]) {
+  --custom-bookmark-toolbar-height: 28px;
+}
+#PersonalToolbar {
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  width: 100vw;
+}
+#browser,
+#customization-container {
+  margin-bottom: var(--custom-bookmark-toolbar-height);
+  border-bottom: 1px solid var(--chrome-content-separator-color) !important;
+}
+
+/* Remove the dropdown menu after tabs */
+#alltabs-button {
+  display: none;
+}
+
+/* Tabs separator */
+.tabbrowser-tab:not(:first-of-type) {
+  margin-left: -1px !important;
+}
+.tab-stack::before,
+.tab-stack::after {
+  height: 40%;
+}
+.tabbrowser-tab:hover + .tabbrowser-tab .tab-stack::before,
+.tabbrowser-tab:hover .tab-stack::before,
+.tabbrowser-tab:hover .tab-stack::after,
+.tabbrowser-tab:first-child .tab-stack::before {
+  opacity: 0;
+}
+
+/* Remove the space before tabs */
+.titlebar-spacer[type='pre-tabs'] {
+  display: none;
+}
