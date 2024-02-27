@@ -1,12 +1,15 @@
+
 /* Move bookmark toolbar to bottom of window */
-:root:not([inDOMFullscreen]) {
-  --custom-bookmark-toolbar-height: 28px;
+:root:not([inDOMFullscreen]){
+  --custom-bookmark-toolbar-height: 32px;
 }
-#PersonalToolbar {
+#PersonalToolbar{
   position: absolute;
   left: 0px;
   bottom: 0;
   width: 100vw;
+  height: var(--custom-bookmark-toolbar-height);
+  align-items: center;
 }
 #browser,
 #customization-container {
@@ -19,22 +22,12 @@
   display: none;
 }
 
-/* Tabs separator */
-.tabbrowser-tab:not(:first-of-type) {
-  margin-left: -1px !important;
-}
-.tab-stack::before,
-.tab-stack::after {
-  height: 40%;
-}
-.tabbrowser-tab:hover + .tabbrowser-tab .tab-stack::before,
-.tabbrowser-tab:hover .tab-stack::before,
-.tabbrowser-tab:hover .tab-stack::after,
-.tabbrowser-tab:first-child .tab-stack::before {
-  opacity: 0;
+/* Remove tab separators */
+.tab-stack::before, .tab-stack::after {
+  display: none;
 }
 
 /* Remove the space before tabs */
-.titlebar-spacer[type='pre-tabs'] {
+.titlebar-spacer[type="pre-tabs"] {
   display: none;
 }
