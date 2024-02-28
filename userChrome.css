@@ -1,4 +1,3 @@
-
 /* Move bookmark toolbar to bottom of window */
 :root:not([inDOMFullscreen]){
   --custom-bookmark-toolbar-height: 32px;
@@ -25,6 +24,27 @@
 /* Remove tab separators */
 .tab-stack::before, .tab-stack::after {
   display: none;
+}
+
+/* Windows 10 styled tab indicator line */
+.tabbrowser-tab {
+  --tab-context-line-gap: 16px;
+}
+.tabbrowser-tab:not(:hover):not([selected="true"], [multiselected]) .tab-context-line {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+  opacity: 0.8 !important;
+  transform: scaleX(1) translateX(calc(var(--tab-context-line-gap) / 2)) !important;
+  width: calc(100% - var(--tab-context-line-gap));
+}
+.tabbrowser-tab:hover:not([selected="true"], [multiselected]) > .tab-stack > .tab-background > .tab-context-line {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+  width: 100%;
+}
+.tabbrowser-tab:not([selected="true"], [multiselected]) .tab-context-line {
+  transition:
+    width 250ms var(--animation-easing-function),
+    transform 250ms var(--animation-easing-function),
+    opacity 250ms var(--animation-easing-function) !important;
 }
 
 /* Remove the space before tabs */
