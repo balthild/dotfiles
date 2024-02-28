@@ -31,6 +31,7 @@ patch:
   reduce_english_filter/+:
     mode: all
     idx: 5
+    words/+: [makes]
 
   switches:
     - name: full_shape
