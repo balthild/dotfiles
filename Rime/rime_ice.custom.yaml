@@ -33,6 +33,9 @@ patch:
     idx: 5
     words/+: [makes]
 
+  radical_lookup/prefix: "uu"
+  recognizer/patterns/radical_lookup: "^uu[a-z]+$"
+
   switches:
     - name: full_shape
       states: [ 半, 全 ]
