@@ -1,9 +1,12 @@
+[wsl.files]
+"wsl/.wslconfig" = "~/.wslconfig"
+
 [git.files]
 "git" = "~"
 
 [elvish.files]
-"elvish" = "~/AppData/Roaming/elvish"
-"starship.toml" = "~/.config/starship.toml"
+"elvish/rc" = "~/AppData/Roaming/elvish"
+"elvish/starship.toml" = "~/.config/starship.toml"
 
 [rime.files]
 "Rime" = "~/AppData/Roaming/Rime"

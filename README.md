@@ -22,7 +22,7 @@ Create `~/.dotfiles/.dotter/local.toml` and specify the packages to be deployed:
 
 ```toml
 includes = []
-packages = ["git", "elvish", "rime", "flow", "nvim"]
+packages = ["wsl", "git", "elvish", "rime", "flow", "nvim"]
 ```
 
 Deploy:
@@ -31,7 +31,11 @@ Deploy:
 dotter deploy
 ```
 
-## Package Dependencies
+## Packages
+
+### WSL
+
+[ArchWSL](https://github.com/yuk7/ArchWSL)
 
 ### Elvish
 

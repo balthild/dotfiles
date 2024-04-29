@@ -51,7 +51,7 @@ fn vim {|@a| e:nvim $@a }
 
 fn read-key { python -c 'import msvcrt; print(msvcrt.getch())' }
 
-# JDK version manager for Windows
+# JDK version switcher for Windows
 fn reg-subkeys {|prefix|
   use str
   reg query $prefix /k /f '' | findstr HKEY | each {|k| put (str:trim-prefix $k $prefix) }
