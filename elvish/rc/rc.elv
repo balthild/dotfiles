@@ -5,6 +5,9 @@ eval (starship init elvish)
 set E:CARAPACE_MATCH = 'CASE_INSENSITIVE'
 set edit:completion:matcher[argument] = {|seed| edit:match-prefix $seed &ignore-case=$true }
 
+# Suppress timeout messages from starship
+set E:STARSHIP_LOG = 'error'
+
 # Quick cursor moving
 set edit:insert:binding[Ctrl-Backspace] = { edit:kill-left-alnum-word }
 set edit:insert:binding[Ctrl-Delete] = { edit:kill-left-alnum-word }
