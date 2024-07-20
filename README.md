@@ -57,5 +57,5 @@ Weasel 0.11+ has plum (rime-install) out of the box, located at ｢输入法设�
 
 ```shell
 cd ~/AppData/Roaming/plum
-rime-install iDvel/rime-ice:others/recipes/full
+./rime-install iDvel/rime-ice:others/recipes/full
 ```
