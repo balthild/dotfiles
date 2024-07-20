@@ -53,4 +53,9 @@ Requires [rime-ice](https://github.com/iDvel/rime-ice).
 bash rime-install iDvel/rime-ice:others/recipes/full
 ```
 
-Weasel 0.11+ has plum (rime-install) out of the box, located at ｢输入法设定｣ — ｢获取更多输入方案｣.
+Weasel 0.11+ has plum (rime-install) out of the box, located at ｢输入法设定｣ — ｢获取更多输入方案｣. After bootstrapping:
+
+```shell
+cd ~/AppData/Roaming/plum
+rime-install iDvel/rime-ice:others/recipes/full
+```
