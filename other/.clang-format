@@ -1,0 +1,14 @@
+---
+BasedOnStyle: LLVM
+AccessModifierOffset: -4
+AlignAfterOpenBracket: BlockIndent
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AlwaysBreakTemplateDeclarations: Yes
+BinPackArguments: false
+BinPackParameters: false
+IndentWidth: 4
+PackConstructorInitializers: CurrentLine
+QualifierAlignment: Left
+SpaceAfterCStyleCast: true
+SpaceBeforeCpp11BracedList: true
