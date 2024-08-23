@@ -8,7 +8,6 @@ AlwaysBreakTemplateDeclarations: Yes
 BinPackArguments: false
 BinPackParameters: false
 IndentWidth: 4
-InsertTrailingCommas: Wrapped
 KeepEmptyLinesAtEOF: true
 PackConstructorInitializers: CurrentLine
 QualifierAlignment: Left
