@@ -8,7 +8,7 @@ AlwaysBreakTemplateDeclarations: Yes
 BinPackArguments: false
 BinPackParameters: false
 IndentWidth: 4
-KeepEmptyLinesAtEOF: true
+InsertNewlineAtEOF: true
 PackConstructorInitializers: CurrentLine
 QualifierAlignment: Left
 SpaceAfterCStyleCast: true
