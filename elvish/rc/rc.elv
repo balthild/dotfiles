@@ -8,13 +8,17 @@ set edit:completion:matcher[argument] = {|seed| edit:match-prefix $seed &ignore-
 # Suppress timeout messages from starship
 set E:STARSHIP_LOG = 'error'
 
+# Quick deletion
+set edit:insert:binding[Alt-Backspace] = { edit:kill-left-alnum-word }
+set edit:insert:binding[Alt-Delete] = { edit:kill-left-alnum-word }
+#set edit:insert:binding[Ctrl-Backspace] = { edit:kill-line-left }
+#set edit:insert:binding[Ctrl-Delete] = { edit:kill-line-left }
+
 # Quick cursor moving
-set edit:insert:binding[Ctrl-Backspace] = { edit:kill-left-alnum-word }
-set edit:insert:binding[Ctrl-Delete] = { edit:kill-left-alnum-word }
-set edit:insert:binding[Ctrl-Left] = { edit:move-dot-left-alnum-word }
-set edit:insert:binding[Ctrl-Right] = { edit:move-dot-right-alnum-word }
-set edit:insert:binding[Alt-Left] = { edit:move-dot-sol }
-set edit:insert:binding[Alt-Right] = { edit:move-dot-eol }
+set edit:insert:binding[Alt-Left] = { edit:move-dot-left-alnum-word }
+set edit:insert:binding[Alt-Right] = { edit:move-dot-right-alnum-word }
+set edit:insert:binding[Ctrl-Left] = { edit:move-dot-sol }
+set edit:insert:binding[Ctrl-Right] = { edit:move-dot-eol }
 
 # Set output styles and charset for GNU coreutils
 set E:LC_ALL = 'C.UTF-8'
