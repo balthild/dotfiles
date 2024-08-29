@@ -2,36 +2,71 @@
 
 Managed with [dotter](https://github.com/SuperCuber/dotter).
 
-## Deploy in Windows
+## Deploy
 
-Install dependencies:
+- Install dependencies:
 
-```shell
-scoop install git dotter
-```
+  ```shell
+  # macOS
+  nix-shell -p git dotter
+  ```
 
-Clone the repository to `~/.dotfiles`:
+  ```shell
+  # Windowws
+  scoop install git dotter
+  ```
 
-```shell
-cd ~
-git clone https://github.com/balthild/dotfiles .dotfiles
-cd .dotfiles
-```
+- Clone the repository to `~/.dotfiles`:
 
-Create `~/.dotfiles/.dotter/local.toml` and specify the packages to be deployed:
+  ```shell
+  cd ~
+  git clone https://github.com/balthild/dotfiles .dotfiles
+  cd .dotfiles
+  ```
 
-```toml
-includes = []
-packages = ["wsl", "git", "elvish", "rime", "flow", "nvim"]
-```
+- Create `~/.dotfiles/.dotter/local.toml` and specify the packages to be deployed:
 
-Deploy:
+  ```toml
+  # macOS
+  includes = [".dotter/macos.toml"]
+  packages = ["nix", "git", "elvish", "rime", "nvim"]
+  ```
 
-```shell
-dotter deploy
-```
+  ```toml
+  # Windows
+  includes = [".dotter/windows.toml"]
+  packages = ["wsl", "git", "elvish", "rime", "flow", "nvim"]
+  ```
+
+- Confirm what will be deployed:
+
+  ```shell
+  dotter deploy --dry-run
+  # or shorter
+  dotter deploy -d
+  ```
+
+- Deploy:
+
+  ```shell
+  dotter deploy
+  ```
 
 ## Packages
+
+### Nix
+
+Requires [nix-darwin](https://github.com/LnL7/nix-darwin).
+
+Search package:
+```shell
+nix search elvish
+```
+
+Apply changes:
+```shell
+darwin-rebuild switch
+```
 
 ### WSL
 
@@ -42,6 +77,7 @@ dotter deploy
 Requires [starship](https://github.com/starship/starship) and [carapace](https://github.com/rsteube/carapace-bin).
 
 ```shell
+# Windows
 scoop install elvish starship carapace-bin
 ```
 

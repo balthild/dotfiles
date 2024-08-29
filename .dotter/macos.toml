@@ -1,0 +1,5 @@
+[nix.files]
+"nix" = "~/.nixpkgs"
+
+[rime.files]
+"Rime" = "~/Library/Rime"

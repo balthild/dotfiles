@@ -9,10 +9,10 @@ set edit:completion:matcher[argument] = {|seed| edit:match-prefix $seed &ignore-
 set E:STARSHIP_LOG = 'error'
 
 # Quick deletion
-set edit:insert:binding[Alt-Backspace] = { edit:kill-left-alnum-word }
-set edit:insert:binding[Alt-Delete] = { edit:kill-left-alnum-word }
-#set edit:insert:binding[Ctrl-Backspace] = { edit:kill-line-left }
-#set edit:insert:binding[Ctrl-Delete] = { edit:kill-line-left }
+set edit:insert:binding[Alt-Backspace] = { edit:kill-alnum-word-left }
+set edit:insert:binding[Alt-Delete] = { edit:kill-alnum-word-left }
+set edit:insert:binding[Ctrl-Backspace] = { edit:kill-alnum-word-left }
+set edit:insert:binding[Ctrl-Delete] = { edit:kill-alnum-word-left }
 
 # Quick cursor moving
 set edit:insert:binding[Alt-Left] = { edit:move-dot-left-alnum-word }

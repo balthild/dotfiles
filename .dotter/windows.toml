@@ -1,0 +1,14 @@
+[elvish.files]
+"elvish/rc" = "~/AppData/Roaming/elvish"
+
+[wsl.files]
+"wsl/.wslconfig" = "~/.wslconfig"
+
+[rime.files]
+"Rime" = "~/AppData/Roaming/Rime"
+
+[nvim.files]
+"nvim" = "~/AppData/Local/nvim"
+
+[flow.files]
+"FlowLauncher" = "~/AppData/Roaming/FlowLauncher"
