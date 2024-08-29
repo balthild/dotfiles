@@ -4,53 +4,53 @@ Managed with [dotter](https://github.com/SuperCuber/dotter).
 
 ## Deploy
 
-- Install dependencies:
+Prepare the environment:
 
-  ```shell
-  # macOS
-  nix-shell -p git dotter
-  ```
+```shell
+# macOS
+nix-shell -p git dotter
+```
 
-  ```shell
-  # Windowws
-  scoop install git dotter
-  ```
+```shell
+# Windowws
+scoop install git dotter
+```
 
-- Clone the repository to `~/.dotfiles`:
+Clone the repository to `~/.dotfiles`:
 
-  ```shell
-  cd ~
-  git clone https://github.com/balthild/dotfiles .dotfiles
-  cd .dotfiles
-  ```
+```shell
+cd ~
+git clone https://github.com/balthild/dotfiles .dotfiles
+cd .dotfiles
+```
 
-- Create `~/.dotfiles/.dotter/local.toml` and specify the packages to be deployed:
+Create `~/.dotfiles/.dotter/local.toml` and specify the packages to be deployed:
 
-  ```toml
-  # macOS
-  includes = [".dotter/macos.toml"]
-  packages = ["nix", "git", "elvish", "rime", "nvim"]
-  ```
+```toml
+# macOS
+includes = [".dotter/macos.toml"]
+packages = ["nix", "git", "elvish", "rime", "nvim"]
+```
 
-  ```toml
-  # Windows
-  includes = [".dotter/windows.toml"]
-  packages = ["wsl", "git", "elvish", "rime", "flow", "nvim"]
-  ```
+```toml
+# Windows
+includes = [".dotter/windows.toml"]
+packages = ["wsl", "git", "elvish", "rime", "flow", "nvim"]
+```
 
-- Confirm what will be deployed:
+Confirm what will be deployed:
 
-  ```shell
-  dotter deploy --dry-run
-  # or shorter
-  dotter deploy -d
-  ```
+```shell
+dotter deploy --dry-run
+# or shorter
+dotter deploy -d
+```
 
-- Deploy:
+Deploy:
 
-  ```shell
-  dotter deploy
-  ```
+```shell
+dotter deploy
+```
 
 ## Packages
 
