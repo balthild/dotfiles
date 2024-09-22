@@ -58,12 +58,14 @@ dotter deploy
 
 Requires [nix-darwin](https://github.com/LnL7/nix-darwin).
 
-Search package:
+Search packages:
+
 ```shell
-nix search elvish
+nix search nixpkgs elvish
 ```
 
-Apply changes:
+Apply configurations:
+
 ```shell
 darwin-rebuild switch
 ```
