@@ -1,0 +1,26 @@
+{
+  "imporg": {
+    "aliases": ["^@/", "^virtual:"]
+  },
+  "typescript": {
+    "lineWidth": 80,
+    "semiColons": "always",
+    "quoteStyle": "preferSingle",
+    "jsx.quoteStyle": "preferDouble",
+    "quoteProps": "consistent",
+    "arrowFunction.useParentheses": "force",
+    "functionExpression.spaceBeforeParentheses": true,
+    "jsxOpeningElement.bracketPosition": "sameLine",
+    "jsxSelfClosingElement.bracketPosition": "nextLine"
+  },
+  "malva": {
+    "indentWidth": 4,
+    "printWidth": 120,
+    "quotes": "preferSingle"
+  },
+  "excludes": [
+    "**/node_modules",
+    "**/*-lock.json"
+  ],
+  "plugins": []
+}

@@ -1,3 +1,6 @@
+[settings]
+default_target_type = "symbolic"
+
 [git.files]
 "git" = "~"
 
