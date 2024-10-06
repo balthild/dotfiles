@@ -1,0 +1,10 @@
+{
+  "malva": {
+    "indentWidth": 4,
+    "printWidth": 120,
+    "quotes": "preferSingle"
+  },
+  "plugins": [
+    "https://plugins.dprint.dev/g-plane/malva-v0.10.1.wasm"
+  ]
+}

@@ -1,7 +1,4 @@
 {
-  "imporg": {
-    "aliases": ["^@/", "^virtual:"]
-  },
   "typescript": {
     "lineWidth": 80,
     "semiColons": "always",
@@ -13,14 +10,7 @@
     "jsxOpeningElement.bracketPosition": "sameLine",
     "jsxSelfClosingElement.bracketPosition": "nextLine"
   },
-  "malva": {
-    "indentWidth": 4,
-    "printWidth": 120,
-    "quotes": "preferSingle"
-  },
-  "excludes": [
-    "**/node_modules",
-    "**/*-lock.json"
-  ],
-  "plugins": []
+  "plugins": [
+    "https://plugins.dprint.dev/typescript-0.93.0.wasm"
+  ]
 }
