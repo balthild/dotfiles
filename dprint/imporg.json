@@ -1,6 +1,6 @@
 {
   "imporg": {
-    "aliases": ["^@/", "^virtual:"]
+    "aliases": ["^~/", "^@/", "^virtual:"]
   },
   "plugins": [
     "https://plugins.dprint.dev/balthild/imporg-0.1.6.wasm"
