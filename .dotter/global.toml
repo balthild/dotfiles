@@ -4,12 +4,14 @@ default_target_type = "symbolic"
 [git.files]
 "git" = "~"
 
-[elvish.files]
-"elvish/rc" = "~/.config/elvish/"
-"elvish/starship.toml" = "~/.config/starship.toml"
-
-[rime.files]
-"Rime" = "~/Library/Rime"
+[shell.files]
+"shell/elvish" = "~/.config/elvish/"
+"shell/starship.toml" = "~/.config/starship.toml"
 
 [nvim.files]
 "nvim" = "~/.config/nvim"
+
+[rime]
+[nix]
+[wsl]
+[flow]

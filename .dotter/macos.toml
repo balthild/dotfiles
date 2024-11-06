@@ -1,5 +1,8 @@
-[nix.files]
-"nix" = "~/.nixpkgs"
+[default]
+depends = ["git", "shell", "nvim", "rime", "nix"]
 
 [rime.files]
-"Rime" = "~/Library/Rime"
+"rime" = "~/Library/Rime"
+
+[nix.files]
+"nix" = "~/.nixpkgs"

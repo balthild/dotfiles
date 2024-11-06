@@ -29,13 +29,13 @@ Create `~/.dotfiles/.dotter/local.toml` and specify the packages to be deployed:
 ```toml
 # macOS
 includes = [".dotter/macos.toml"]
-packages = ["nix", "git", "elvish", "rime", "nvim"]
+packages = ["default"]
 ```
 
 ```toml
 # Windows
 includes = [".dotter/windows.toml"]
-packages = ["wsl", "git", "elvish", "rime", "flow", "nvim"]
+packages = ["default"]
 ```
 
 Confirm what will be deployed:
@@ -74,9 +74,9 @@ darwin-rebuild switch
 
 [ArchWSL](https://github.com/yuk7/ArchWSL)
 
-### Elvish
+### Shell
 
-Requires [starship](https://github.com/starship/starship) and [carapace](https://github.com/rsteube/carapace-bin).
+Requires [elvish](https://github.com/elves/elvish), [starship](https://github.com/starship/starship), and [carapace](https://github.com/rsteube/carapace-bin).
 
 ```shell
 # Windows

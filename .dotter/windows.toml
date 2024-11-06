@@ -1,14 +1,17 @@
-[elvish.files]
-"elvish/rc" = "~/AppData/Roaming/elvish"
+[default]
+depends = ["git", "shell", "nvim", "rime", "wsl", "flow"]
 
-[wsl.files]
-"wsl/.wslconfig" = "~/.wslconfig"
-
-[rime.files]
-"Rime" = "~/AppData/Roaming/Rime"
+[shell.files]
+"shell/elvish" = "~/AppData/Roaming/elvish"
 
 [nvim.files]
 "nvim" = "~/AppData/Local/nvim"
 
+[rime.files]
+"rime" = "~/AppData/Roaming/Rime"
+
+[wsl.files]
+"wsl/.wslconfig" = "~/.wslconfig"
+
 [flow.files]
-"FlowLauncher" = "~/AppData/Roaming/FlowLauncher"
+"flow" = "~/AppData/Roaming/FlowLauncher"
