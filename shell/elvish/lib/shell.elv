@@ -53,14 +53,28 @@ init-starship
 set E:STARSHIP_LOG = 'error'
 
 # https://github.com/elves/elvish/issues/438
-var last-cwd
-fn cd {|path|
+var lwd
+fn cd {|@args|
   use builtin
-  if (eq $path -) {
-    cd $last-cwd
-  } else {
-    set last-cwd = $pwd
+
+  if (has-key $args 1) {
+    fail 'too many arguments'
+  }
+
+  var path = (try { put $args[0] } catch { put ~ })
+  if (not-eq (kind-of $path) string) {
+    fail 'invalid path'
+  }
+
+  if (not-eq $path -) {
+    var cwd = $pwd
     builtin:cd $path
+    set lwd = $cwd
+  } elif (not-eq $lwd $nil) {
+    echo $lwd
+    cd $lwd
+  } else {
+    echo no cd history
   }
 }
 
