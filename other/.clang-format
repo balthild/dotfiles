@@ -2,6 +2,8 @@
 BasedOnStyle: LLVM
 AccessModifierOffset: -4
 AlignAfterOpenBracket: BlockIndent
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortEnumsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: Empty
 AlwaysBreakTemplateDeclarations: Yes
@@ -11,5 +13,6 @@ IndentWidth: 4
 InsertNewlineAtEOF: true
 PackConstructorInitializers: CurrentLine
 QualifierAlignment: Left
+PointerAlignment: Left
 SpaceAfterCStyleCast: true
 SpaceBeforeCpp11BracedList: true
