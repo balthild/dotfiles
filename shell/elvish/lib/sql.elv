@@ -1,3 +1,5 @@
+use utils
+
 fn sql {|@args|
   with E:JAVA_TOOL_OPTIONS = '-Duser.language=en' {
     e:sql $@args
