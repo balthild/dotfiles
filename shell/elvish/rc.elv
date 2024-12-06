@@ -3,6 +3,7 @@ use utils
 use keybindings
 use coreutils
 use java
+use sql
 
 var alias~ = $utils:alias~
 
