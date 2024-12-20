@@ -1,13 +1,15 @@
 # 配合雾凇拼音使用 https://github.com/iDvel/rime-ice
 patch:
   punctuator/half_shape/+:
-    __include: /punctuations
+    "/": "、"
+    "`": "·"
     "[": "「"
     "]": "」"
     "{": "『"
     "}": "』"
   punctuator/full_shape/+:
-    __include: /punctuations
+    "/": "、"
+    "`": "·"
     "[": "“"
     "]": "”"
     "{": "‘"
@@ -29,12 +31,14 @@ patch:
       - /bindings
 
   reduce_english_filter/+:
-    mode: all
+    mode: none
+  force_reduce_english_filter/+:
     idx: 5
-    words/+: [makes]
+  engine/filters/+:
+    - lua_filter@*force_reduce_english_filter
 
-  radical_lookup/prefix: "uu"
-  recognizer/patterns/radical_lookup: "^uu[a-z]+$"
+  radical_lookup/prefix: "u"
+  recognizer/patterns/radical_lookup: "^u[a-z]+$"
 
   switches:
     - name: full_shape
@@ -50,10 +54,6 @@ patch:
       states: [ ☠️, 😀 ]
       reset: 1
 
-
-punctuations:
-  "/": "、"
-  "`": "·"
 
 bindings:
   __append:
