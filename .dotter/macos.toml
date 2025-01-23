@@ -1,5 +1,5 @@
 [default]
-depends = ["git", "shell", "nvim", "rime", "nix"]
+depends = ["git", "shell", "nvim", "rime", "nix", "misc"]
 
 [rime.files]
 "rime" = "~/Library/Rime"

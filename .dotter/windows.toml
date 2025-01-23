@@ -1,5 +1,5 @@
 [default]
-depends = ["git", "shell", "nvim", "rime", "wsl", "flow"]
+depends = ["git", "shell", "nvim", "rime", "wsl", "flow", "misc"]
 
 [shell.files]
 "shell/elvish" = "~/AppData/Roaming/elvish"
@@ -15,3 +15,6 @@ depends = ["git", "shell", "nvim", "rime", "wsl", "flow"]
 
 [flow.files]
 "flow" = "~/AppData/Roaming/FlowLauncher"
+
+[misc.files]
+"misc/.pycodestyle" = "~/.pycodestyle"
