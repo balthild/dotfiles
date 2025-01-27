@@ -1,5 +1,3 @@
-use utils
-
 eval (carapace _carapace elvish | slurp)
 
 # Make the completions case-insensitive
@@ -16,8 +14,56 @@ fn source {|path|
   eval (slurp < $path)
 }
 
-utils:alias source = $source~
-utils:alias . = $source~
+var aliases = [&]
+
+fn alias {|@def|
+  use utils
+
+  if (not (and (has-key $def 0..2) (eq $def[1] =))) {
+    echo Usage: alias name = command arg1 arg2 ...
+    fail 'alias syntax error'
+  }
+
+  var name _ cmd @rest = $@def
+  var callable = (utils:callable $cmd)
+
+  edit:add-var $name'~' {|@args|
+    $callable $@rest $@args
+  }
+
+  var repr = $cmd
+  if (eq (kind-of $cmd) 'fn') {
+    set repr = (utils:fn-signature $cmd)
+  }
+  set aliases[$name] = (echo $repr $@rest)
+}
+
+fn which {|name|
+  use str
+  use utils
+
+  if (has-key $aliases $name) {
+    echo alias $name = $aliases[$name]
+    return
+  }
+  if (str:has-prefix $name 'e:') {
+    echo (search-external $name[2..])
+    return
+  }
+  if (str:contains $name ':') {
+    echo $name
+    return
+  }
+
+  var expr = (resolve $name)
+  if (str:has-prefix $expr '(external ') {
+    echo (search-external $name)
+  } elif (str:has-prefix $expr '$') {
+    echo (utils:fn-signature (utils:get $expr))
+  } else {
+    echo $expr
+  }
+}
 
 # https://github.com/elves/elvish/issues/438
 var lwd
@@ -44,5 +90,3 @@ fn cd {|@args|
     echo no cd history
   }
 }
-
-utils:alias cd = $cd~

@@ -11,6 +11,3 @@ fn sqlcl-script {|name input|
     echo "set echo on\n@"$input"\nquit\n" | e:sql -name $name
   }
 }
-
-utils:alias sql = $sql~
-utils:alias sqlcl-script = $sqlcl-script~

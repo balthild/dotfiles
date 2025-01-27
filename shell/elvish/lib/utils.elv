@@ -1,5 +1,48 @@
-fn get {|name|
-  eval 'put $'$name
+fn get {|expr &type=$nil|
+  var value = (eval 'put '$expr)
+  if (not-eq $type $nil) {
+    if (not-eq $type (kind-of $value)) {
+      fail 'variable $'$expr' is not in type '$type
+    }
+  }
+  put $value
+}
+
+fn get-var {|name|
+  get '$'$name
+}
+
+fn get-command {|name|
+  get &type=fn (resolve $name)
+}
+
+fn fn-signature {|callable|
+  use str
+  use re
+
+  var repr = (repr $callable)
+  if (str:has-prefix $repr '<builtin <') {
+    put (str:replace '>:' ':' $repr[10..-1])
+    return
+  }
+  if (str:has-prefix $repr '<builtin ') {
+    put 'builtin:'$repr[9..-1]
+    return
+  }
+  if (str:has-prefix $repr '<external ') {
+    put 'e:'$repr[10..-1]
+    return
+  }
+
+  var args = [(for x $callable[arg-names] { styled $x bold })]
+  var opts = [(for x $callable[opt-names] { styled '&'$x'=…' italic dim })]
+
+  var rest = $callable[rest-arg]
+  if (>= $rest 0) {
+    set args[$rest] = '@'(styled $args[$rest] underlined)
+  }
+
+  echo $@args $@opts | put 'fn['(one)']'
 }
 
 fn append-paths {|p|
@@ -26,22 +69,8 @@ fn callable {|cmd|
   if (eq $kind fn) {
     put $cmd
   } elif (eq $kind string) {
-    try { get $cmd'~' } catch { external $cmd }
+    try { get-command $cmd } catch { external $cmd }
   } else {
-    fail 'command '$cmd' does not exist'
-  }
-}
-
-fn alias {|@def|
-  if (not (and (has-key $def 0..2) (eq $def[1] =))) {
-    echo Usage: alias name = command arg1 arg2 ...
-    fail 'alias syntax error'
-  }
-
-  var name _ cmd @rest = $@def
-  var fn = (callable $cmd)
-
-  edit:add-var $name'~' {|@args|
-    $fn $@rest $@args
+    fail 'wrong type: need string or fn, got '$kind
   }
 }

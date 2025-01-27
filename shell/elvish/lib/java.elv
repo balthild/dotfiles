@@ -53,8 +53,6 @@ fn jdk-version-use {|@args|
   java -version
 }
 
-utils:alias jver = $jdk-version-use~
-
 set edit:completion:arg-completer[jver] = {|@args|
   var versions = (jdk-version-list)
   for ver [(keys $versions | order)] {
