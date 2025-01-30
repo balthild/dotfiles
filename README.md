@@ -8,11 +8,14 @@ Prepare the environment:
 
 ```shell
 # macOS
-nix-shell -p git dotter
+curl -sSf -L https://install.lix.systems/lix | sh -s -- install
+nix shell 'nixpkgs#git' 'nixpkgs#dotter'
 ```
 
 ```shell
-# Windowws
+# Windows
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 scoop install git dotter
 ```
 
@@ -58,16 +61,16 @@ dotter deploy
 
 Requires [nix-darwin](https://github.com/LnL7/nix-darwin).
 
-Search packages:
+First-time installation:
 
 ```shell
-nix search nixpkgs elvish
+nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/.dotfiles/nix
 ```
 
-Apply configurations:
+Apply changes:
 
 ```shell
-darwin-rebuild switch
+darwin-rebuild -- switch --flake ~/.dotfiles/nix
 ```
 
 ### WSL
