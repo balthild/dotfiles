@@ -14,5 +14,6 @@ default_target_type = "symbolic"
 [rime]
 [nix]
 [wsl]
+[shim]
 [flow]
 [misc]

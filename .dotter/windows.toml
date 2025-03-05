@@ -1,5 +1,5 @@
 [default]
-depends = ["git", "shell", "nvim", "rime", "wsl", "flow", "misc"]
+depends = ["git", "shell", "nvim", "rime", "wsl", "shim", "flow", "misc"]
 
 [shell.files]
 "shell/elvish" = "~/AppData/Roaming/elvish"
@@ -12,6 +12,11 @@ depends = ["git", "shell", "nvim", "rime", "wsl", "flow", "misc"]
 
 [wsl.files]
 "wsl/.wslconfig" = "~/.wslconfig"
+
+[shim.files]
+"shim/shim.exe" = "~/.local/bin/shim.exe"
+"shim/msys.exe" = "~/.local/bin/msys.exe"
+"shim/msys.shim" = "~/.local/bin/msys.shim"
 
 [flow.files]
 "flow" = "~/AppData/Roaming/FlowLauncher"
