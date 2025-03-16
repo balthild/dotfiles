@@ -1,6 +1,6 @@
 # Ghostty
-if (has-env GHOSTTY_RESOURCES_DIR) {
-  eval (slurp < $E:GHOSTTY_RESOURCES_DIR/shell-integration/elvish/lib/ghostty-integration.elv)
+if (eq $E:TERM xterm-ghostty) {
+  use ghostty-integration
 }
 
 # Carapace
