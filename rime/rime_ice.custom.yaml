@@ -1,18 +1,16 @@
 # 配合雾凇拼音使用 https://github.com/iDvel/rime-ice
 patch:
-  __include: "rime_ice.custom.platform:/patch"
+  # Bug：当这里有 __include 时，后面指定合并（+）的选项会变成整个覆盖
+  # __include: "rime_ice.custom.platform:/patch"
 
-  # 不知道为什么 rime_ice.schema.yaml 相应选项中的 __include 没起作用，所以这里重新导入
-  punctuator/half_shape:
-    __include: default:/punctuator/full_shape
+  punctuator/half_shape/+:
     "/": "、"
     "`": "·"
     "[": "「"
     "]": "」"
     "{": "『"
     "}": "』"
-  punctuator/full_shape:
-    __include: default:/punctuator/full_shape
+  punctuator/full_shape/+:
     "/": "、"
     "`": "·"
     "[": "“"
@@ -25,6 +23,8 @@ patch:
     switch_key:
       Control_L: noop
       Control_R: noop
+      Shift_L: commit_code
+      Shift_R: commit_code
       Caps_Lock: commit_code
       Eisu_toggle: commit_code
 

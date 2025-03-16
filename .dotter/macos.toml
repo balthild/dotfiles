@@ -6,7 +6,7 @@ depends = ["git", "shell", "nvim", "rime", "nix", "misc"]
 
 [rime.files]
 "rime" = "~/Library/Rime"
-"rime/rime_ice.custom.macos.yaml" = "~/Library/Rime/rime_ice.custom.platform.yaml"
+# "rime/rime_ice.custom.macos.yaml" = "~/Library/Rime/rime_ice.custom.platform.yaml"
 
 [nix.files]
 "nix" = "~/.nixpkgs"

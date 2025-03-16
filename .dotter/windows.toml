@@ -9,7 +9,7 @@ depends = ["git", "shell", "nvim", "rime", "wsl", "shim", "flow", "misc"]
 
 [rime.files]
 "rime" = "~/AppData/Roaming/Rime"
-"rime/rime_ice.custom.windows.yaml" = "~/AppData/Roaming/Rime/rime_ice.custom.platform.yaml"
+# "rime/rime_ice.custom.windows.yaml" = "~/AppData/Roaming/Rime/rime_ice.custom.platform.yaml"
 
 [wsl.files]
 "wsl/.wslconfig" = "~/.wslconfig"
