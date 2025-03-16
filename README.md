@@ -91,6 +91,10 @@ scoop install elvish starship carapace-bin
 Requires [rime-ice](https://github.com/iDvel/rime-ice).
 
 ```shell
+# Install with Rimeka
+rimeka iDvel/rime-ice:others/recipes/full
+
+# Install with /plum/
 bash rime-install iDvel/rime-ice:others/recipes/full
 ```
 
