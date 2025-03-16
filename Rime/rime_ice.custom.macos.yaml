@@ -1,0 +1,6 @@
+patch:
+  # Use system shortcut key to switch between input modes
+  ascii_composer/+:
+    switch_key:
+      Shift_L: noop
+      Shift_R: noop

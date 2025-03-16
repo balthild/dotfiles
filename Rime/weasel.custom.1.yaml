@@ -1,7 +1,7 @@
 # Add in weasel.custom.yaml:
 # ```
 # patch:
-#   __include: "weasel.custom.patch:/patch"
+#   __include: "weasel.custom.1:/patch"
 # ```
 patch:
   preset_color_schemes/+:

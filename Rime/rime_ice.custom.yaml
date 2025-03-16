@@ -1,5 +1,7 @@
 # 配合雾凇拼音使用 https://github.com/iDvel/rime-ice
 patch:
+  __include: "rime_ice.custom.platform:/patch"
+
   punctuator/half_shape/+:
     "/": "、"
     "`": "·"
@@ -22,8 +24,6 @@ patch:
       Control_R: noop
       Caps_Lock: commit_code
       Eisu_toggle: commit_code
-      Shift_L: commit_code
-      Shift_R: commit_code
 
   key_binder/bindings/+:
     __patch:
@@ -42,18 +42,17 @@ patch:
 
   switches:
     - name: full_shape
-      states: [ 半, 全 ]
+      states: [半, 全]
       reset: 0
     - name: traditionalization
-      states: [ 简, 繁 ]
+      states: [简, 繁]
       reset: 0
     - name: ascii_punct
-      states: [ ¥, $ ]
+      states: [¥, $]
       reset: 0
     - name: emoji
-      states: [ ☠️, 😀 ]
+      states: [☠️, 😀]
       reset: 1
-
 
 bindings:
   __append:
