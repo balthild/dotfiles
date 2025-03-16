@@ -1,5 +1,15 @@
 [default]
-depends = ["git", "shell", "nvim", "rime", "wsl", "shim", "flow", "misc"]
+depends = [
+    "git",
+    "shell",
+    "nvim",
+    "rime",
+    "wsl",
+    "shim",
+    "flow",
+    "misc",
+    "secret",
+]
 
 [shell.files]
 "shell/elvish" = "~/AppData/Roaming/elvish"

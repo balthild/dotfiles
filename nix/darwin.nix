@@ -21,6 +21,7 @@
     ripgrep
     magic-wormhole-rs
     yt-dlp
+    ffmpeg-full
 
     # Dev
     nodejs
