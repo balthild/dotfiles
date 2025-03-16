@@ -22,6 +22,8 @@
     yt-dlp
 
     # Dev
+    nodejs
+    corepack
     go
     uv
     gcc
@@ -35,7 +37,7 @@
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
-  system.stateVersion = 5;
+  system.stateVersion = 6;
 
   # Set Git commit hash for darwin-version.
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;

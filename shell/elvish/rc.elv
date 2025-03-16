@@ -20,3 +20,5 @@ shell:alias sqlcl-script = $sql:sqlcl-script~
 
 shell:alias vim = nvim
 shell:alias read-key = python -c 'import msvcrt; print(msvcrt.getch())'
+
+shell:alias dotnix-switch = darwin-rebuild switch --flake ~/.dotfiles/nix
