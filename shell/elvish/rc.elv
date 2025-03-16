@@ -1,5 +1,5 @@
+use env
 use shell
-use utils
 use keybindings
 use coreutils
 use java

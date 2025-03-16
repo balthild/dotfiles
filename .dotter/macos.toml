@@ -1,6 +1,9 @@
 [default]
 depends = ["git", "shell", "nvim", "rime", "nix", "misc"]
 
+[shell.files]
+"shell/ghostty.conf" = "~/Library/Application Support/com.mitchellh.ghostty/config"
+
 [rime.files]
 "rime" = "~/Library/Rime"
 

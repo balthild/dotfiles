@@ -1,12 +1,16 @@
-eval (carapace _carapace elvish | slurp)
+# Ghostty
+if (has-env GHOSTTY_RESOURCES_DIR) {
+  eval (slurp < $E:GHOSTTY_RESOURCES_DIR/shell-integration/elvish/lib/ghostty-integration.elv)
+}
 
+# Carapace
+eval (carapace _carapace elvish | slurp)
 # Make the completions case-insensitive
 set E:CARAPACE_MATCH = 'CASE_INSENSITIVE'
-
 set edit:completion:matcher[argument] = {|seed| edit:match-prefix $seed &ignore-case=$true }
 
+# Starship
 eval (starship init elvish)
-
 # Suppress timeout messages from starship
 set E:STARSHIP_LOG = 'error'
 

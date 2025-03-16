@@ -12,6 +12,7 @@
     darwinConfigurations = {
       "Balthild-Mac" = darwin.lib.darwinSystem {
         modules = [ ./darwin.nix ];
+        specialArgs = { inherit inputs; };
       };
     };
   };
