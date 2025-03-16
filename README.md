@@ -9,14 +9,14 @@ Prepare the environment:
 ```shell
 # macOS
 curl -sSf -L https://install.lix.systems/lix | sh -s -- install
-nix shell 'nixpkgs#git' 'nixpkgs#dotter'
+nix shell 'nixpkgs#git' 'nixpkgs#git-crypt' 'nixpkgs#dotter'
 ```
 
 ```shell
 # Windows
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-scoop install git dotter
+scoop install git git-crypt dotter
 ```
 
 Clone the repository to `~/.dotfiles`:
@@ -25,6 +25,7 @@ Clone the repository to `~/.dotfiles`:
 cd ~
 git clone https://github.com/balthild/dotfiles .dotfiles
 cd .dotfiles
+git-crypt unlock ~/path/to/key
 ```
 
 Create `~/.dotfiles/.dotter/local.toml` and specify the packages to be deployed:

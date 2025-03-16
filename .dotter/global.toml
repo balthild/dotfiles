@@ -11,6 +11,9 @@ default_target_type = "symbolic"
 [nvim.files]
 "nvim" = "~/.config/nvim"
 
+[secret.files]
+"secret/ssh-config" = "~/.ssh/config"
+
 [rime]
 [nix]
 [wsl]

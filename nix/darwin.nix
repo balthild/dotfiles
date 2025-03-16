@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     coreutils-full
     git
+    git-crypt
   ];
 
   # Packages in user profiles.
