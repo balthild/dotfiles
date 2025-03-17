@@ -5,8 +5,9 @@ depends = ["git", "shell", "nvim", "rime", "nix", "misc", "secret"]
 "shell/ghostty.conf" = "~/Library/Application Support/com.mitchellh.ghostty/config"
 
 [rime.files]
-"rime" = "~/.local/share/fcitx5/rime"
-# "rime/rime_ice.custom.macos.yaml" = "~/Library/Rime/rime_ice.custom.platform.yaml"
+# "rime" = "~/.local/share/fcitx5/rime"
+"rime" = "~/Library/Rime"
+"rime/options.macos.yaml" = "~/Library/Rime/options.platform.yaml"
 
 [nix.files]
 "nix" = "~/.nixpkgs"

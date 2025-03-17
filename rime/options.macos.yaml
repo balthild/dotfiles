@@ -1,0 +1,3 @@
+switch_key:
+  Shift_L: noop
+  Shift_R: noop

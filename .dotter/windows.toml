@@ -19,7 +19,7 @@ depends = [
 
 [rime.files]
 "rime" = "~/AppData/Roaming/Rime"
-# "rime/rime_ice.custom.windows.yaml" = "~/AppData/Roaming/Rime/rime_ice.custom.platform.yaml"
+"rime/options.windows.yaml" = "~/Library/Rime/options.platform.yaml"
 
 [wsl.files]
 "wsl/.wslconfig" = "~/.wslconfig"
