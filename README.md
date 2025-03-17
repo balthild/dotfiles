@@ -95,9 +95,6 @@ Requires [rime-ice](https://github.com/iDvel/rime-ice).
 # Install with Rimeka
 rimeka iDvel/rime-ice:others/recipes/full
 
-# Install for Fcitx5 with Rimeka
-rimeka -f fcitx5-rime iDvel/rime-ice:others/recipes/full
-
 # Install with /plum/
 bash rime-install iDvel/rime-ice:others/recipes/full
 ```
