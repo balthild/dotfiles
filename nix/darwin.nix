@@ -23,7 +23,7 @@
     yt-dlp
     ffmpeg-full
 
-    # Dev
+    # Dev (compilers/runtimes)
     nodejs
     corepack
     go
@@ -31,7 +31,11 @@
     gcc
     ccls
     typst
+
+    # Dev (tools)
     dprint
+    direnv
+    nixfmt
   ];
 
   # The platform the configuration will be used on.

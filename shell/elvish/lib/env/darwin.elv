@@ -9,6 +9,12 @@ utils:prepend-paths /etc/profiles/per-user/balthild/bin
 # Nix Profile
 utils:prepend-paths ~/.nix-profile/bin/
 
+if (has-external direnv) {
+  # The module is generated with
+  # direnv hook elvish > ~/.dotfiles/shell/elvish/lib/direnv.elv
+  use direnv
+}
+
 # Homebrew
 set-env HOMEBREW_PREFIX /opt/homebrew
 set-env HOMEBREW_CELLAR /opt/homebrew/Cellar
