@@ -33,6 +33,8 @@
     typst
 
     # Dev (tools)
+    colima
+    docker
     dprint
     direnv
     nixfmt
