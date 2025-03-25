@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     coreutils-full
     git
+    git-credential-manager
     git-crypt
   ];
 
