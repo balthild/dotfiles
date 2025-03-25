@@ -22,6 +22,7 @@
     magic-wormhole-rs
     yt-dlp
     ffmpeg-full
+    wget
 
     # Dev (compilers/runtimes)
     nodejs
@@ -38,6 +39,7 @@
     dprint
     direnv
     nixfmt
+    watchexec
   ];
 
   # The platform the configuration will be used on.
