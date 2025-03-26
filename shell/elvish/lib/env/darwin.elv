@@ -1,13 +1,15 @@
 use utils
 
-# Lix
-utils:prepend-paths /nix/var/nix/profiles/default/bin
-# Nix-Darwin System
-utils:prepend-paths /run/current-system/sw/bin
-# Nix-Darwin User
-utils:prepend-paths /etc/profiles/per-user/balthild/bin
-# Nix Profile
-utils:prepend-paths ~/.nix-profile/bin/
+# TODO: https://github.com/LnL7/nix-darwin/issues/1402
+zsh -c 'export' | each {|export|
+  use str
+  use re
+
+  var name value = (str:split &max=2 '=' $export)
+  if (re:match '^(PATH)$|^(NIX|XDG)_' $name) {
+    set-env $name $value
+  }
+}
 
 if (has-external direnv) {
   # The module is generated with
