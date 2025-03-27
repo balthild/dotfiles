@@ -30,7 +30,7 @@ if (eq $platform:os windows) {
 }
 
 if (eq $platform:os darwin) {
-  shell:alias dotfiles-nix-switch = darwin-rebuild switch --flake ~/.dotfiles/nix
+  shell:alias nix-apply = darwin-rebuild switch --flake ~/.dotfiles/nix
 
   shell:alias cask = {|task @args|
     brew $task --cask $@args

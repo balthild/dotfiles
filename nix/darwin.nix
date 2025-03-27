@@ -43,6 +43,11 @@
     watchexec
   ];
 
+  # Environment variables.
+  environment.variables = {
+    EDITOR = "nvim";
+  };
+
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
@@ -58,4 +63,28 @@
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
+
+  # Scheduled tasks for the nix store.
+  nix.gc.automatic = true;
+  nix.optimise.automatic = true;
+
+  # Enable Touch ID for sudo.
+  security.pam.services.sudo_local.touchIdAuth = true;
+
+  # Locale.
+  system.defaults.NSGlobalDomain.AppleICUForce24HourTime = true;
+  system.defaults.NSGlobalDomain.AppleMeasurementUnits = "Centimeters";
+  system.defaults.NSGlobalDomain.AppleTemperatureUnit = "Celsius";
+  system.defaults.NSGlobalDomain.AppleMetricUnits = 1;
+
+  # Keyboard.
+  system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
+  system.defaults.NSGlobalDomain.InitialKeyRepeat = 30;
+  system.defaults.NSGlobalDomain.KeyRepeat = 2;
+  system.defaults.NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
+  system.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
+
+  # Other.
+  system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
+  system.defaults.NSGlobalDomain.AppleSpacesSwitchOnActivate = false;
 }

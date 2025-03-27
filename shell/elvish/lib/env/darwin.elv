@@ -1,12 +1,15 @@
 use utils
 
 # Nix
-# TODO: https://github.com/LnL7/nix-darwin/issues/1402
-bash --noprofile --norc ~/.dotfiles/shell/elvish/lib/env/bashenv.sh | each {|line|
-  use str
-  if (str:contains $line '=') {
-    var name value = (str:split &max=2 '=' $line)
-    set-env $name $value
+if (not (has-env __NIX_DARWIN_SET_ENVIRONMENT_DONE)) {
+  # TODO: https://github.com/LnL7/nix-darwin/issues/1402
+  var script = ~/.dotfiles/shell/elvish/lib/env/bashenv.sh
+  bash --noprofile --norc $script | each {|line|
+    use str
+    if (str:contains $line '=') {
+      var name value = (str:split &max=2 '=' $line)
+      set-env $name $value
+    }
   }
 }
 

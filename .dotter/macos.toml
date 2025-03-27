@@ -11,3 +11,6 @@ depends = ["git", "shell", "nvim", "rime", "nix", "misc", "secret"]
 
 [nix.files]
 "nix" = "~/.nixpkgs"
+
+[misc.files]
+"misc/.pycodestyle" = "~/.config/pycodestyle"
