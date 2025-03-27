@@ -39,7 +39,7 @@
     docker
     dprint
     direnv
-    nixfmt
+    nixfmt-rfc-style
     watchexec
   ];
 

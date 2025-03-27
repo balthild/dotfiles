@@ -1,20 +1,17 @@
 use utils
 
+# Nix
 # TODO: https://github.com/LnL7/nix-darwin/issues/1402
-zsh -c 'export' | each {|export|
+bash --noprofile --norc ~/.dotfiles/shell/elvish/lib/env/bashenv.sh | each {|line|
   use str
-  use re
-
-  var name value = (str:split &max=2 '=' $export)
-  if (re:match '^(PATH)$|^(NIX|XDG)_' $name) {
+  if (str:contains $line '=') {
+    var name value = (str:split &max=2 '=' $line)
     set-env $name $value
   }
 }
 
 if (has-external direnv) {
-  # The module is generated with
-  # direnv hook elvish > ~/.dotfiles/shell/elvish/lib/direnv.elv
-  use direnv
+  eval (direnv hook elvish | slurp)
 }
 
 # Homebrew
@@ -25,5 +22,5 @@ set-env HOMEBREW_REPOSITORY /opt/homebrew
 utils:append-paths /opt/homebrew/bin
 utils:append-paths /opt/homebrew/sbin
 
-set-env MANPATH $E:MANPATH":/opt/homebrew/share/man"
-set-env INFOPATH $E:INFOPATH":/opt/homebrew/share/info"
+set-env MANPATH $E:MANPATH':/opt/homebrew/share/man'
+set-env INFOPATH $E:INFOPATH':/opt/homebrew/share/info'

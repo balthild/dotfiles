@@ -2,7 +2,7 @@ use platform
 use shell
 
 # Set output styles and charset for GNU coreutils
-set E:QUOTING_STYLE = 'literal'
+set-env QUOTING_STYLE 'literal'
 
 # Enable colored output for ls and grep
 shell:alias ls = e:ls --color=auto

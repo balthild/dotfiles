@@ -3,6 +3,7 @@ use env
 use shell
 use keybindings
 use coreutils
+use pyvenv
 
 shell:alias alias = $shell:alias~
 
@@ -14,6 +15,8 @@ shell:alias . = $shell:source~
 shell:alias clear = $edit:clear~
 
 shell:alias vim = nvim
+
+shell:alias activate = $pyvenv:activate~
 
 if (eq $platform:os windows) {
   use java
