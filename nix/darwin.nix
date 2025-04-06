@@ -17,6 +17,7 @@
     starship
 
     # Generic
+    neofetch
     dotter
     neovim
     ripgrep
@@ -25,7 +26,7 @@
     ffmpeg-full
     wget
 
-    # Dev (compilers/runtimes)
+    # Dev (language-specific)
     nodejs
     corepack
     go
@@ -33,13 +34,14 @@
     gcc
     ccls
     typst
+    phpactor
+    nixfmt-rfc-style
 
-    # Dev (tools)
+    # Dev (generic)
     colima
     docker
     dprint
     direnv
-    nixfmt-rfc-style
     watchexec
   ];
 
@@ -67,9 +69,6 @@
   # Scheduled tasks for the nix store.
   nix.gc.automatic = true;
   nix.optimise.automatic = true;
-
-  # Enable Touch ID for sudo.
-  security.pam.services.sudo_local.touchIdAuth = true;
 
   # Locale.
   system.defaults.NSGlobalDomain.AppleICUForce24HourTime = true;

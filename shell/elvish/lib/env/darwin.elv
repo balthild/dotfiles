@@ -27,3 +27,5 @@ utils:append-paths /opt/homebrew/sbin
 
 set-env MANPATH $E:MANPATH':/opt/homebrew/share/man'
 set-env INFOPATH $E:INFOPATH':/opt/homebrew/share/info'
+
+set-env HOMEBREW_NO_ENV_HINTS true
