@@ -1,6 +1,7 @@
 use utils
 
-# Nix
+# Environment variables from nix
+var bashenv = []
 if (not (has-env __NIX_DARWIN_SET_ENVIRONMENT_DONE)) {
   # TODO: https://github.com/LnL7/nix-darwin/issues/1402
   var script = ~/.dotfiles/shell/elvish/lib/env/bashenv.sh
@@ -9,8 +10,13 @@ if (not (has-env __NIX_DARWIN_SET_ENVIRONMENT_DONE)) {
     if (str:contains $line '=') {
       var name value = (str:split &max=2 '=' $line)
       set-env $name $value
+      set bashenv = [$@bashenv $name" = "$value]
     }
   }
+}
+
+edit:add-var bashenv~ {
+  put $@bashenv | each $echo~
 }
 
 if (has-external direnv) {
