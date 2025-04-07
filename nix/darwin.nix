@@ -1,54 +1,13 @@
 { inputs, config, pkgs, ... }:
 
 {
-  # Packages in system profile.
+  # Packages in the system profile.
   environment.systemPackages = with pkgs; [
     coreutils-full
     git
     git-credential-manager
     git-crypt
   ];
-
-  # Packages in user profiles.
-  users.users."balthild".packages = with pkgs; [
-    # Shell
-    elvish
-    carapace
-    starship
-
-    # Generic
-    neofetch
-    dotter
-    neovim
-    ripgrep
-    magic-wormhole-rs
-    yt-dlp
-    ffmpeg-full
-    wget
-
-    # Dev (language-specific)
-    nodejs
-    corepack
-    go
-    uv
-    gcc
-    ccls
-    typst
-    phpactor
-    nixfmt-rfc-style
-
-    # Dev (generic)
-    colima
-    docker
-    dprint
-    direnv
-    watchexec
-  ];
-
-  # Environment variables.
-  environment.variables = {
-    EDITOR = "nvim";
-  };
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -59,6 +18,12 @@
 
   # Set Git commit hash for darwin-version.
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
+
+  # Home Manager requires users being defined here.
+  users.users."balthild" = {
+    name = "balthild";
+    home = "/Users/balthild";
+  };
 
   # Replace nix with lix.
   nix.package = pkgs.lix;
