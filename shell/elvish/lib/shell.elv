@@ -1,6 +1,7 @@
 # Ghostty
-if (eq $E:TERM xterm-ghostty) {
+if (and (eq $E:TERM xterm-ghostty) (not-eq $E:GHOSTTY_INTEGRATION_LOADED 1)) {
   use ghostty-integration
+  set-env GHOSTTY_INTEGRATION_LOADED 1
 }
 
 # Carapace

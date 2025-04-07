@@ -35,6 +35,15 @@
   nix.gc.automatic = true;
   nix.optimise.automatic = true;
 
+  # Dock and Mission Control.
+  system.defaults.dock.orientation = "left";
+  system.defaults.dock.show-recents = false;
+  system.defaults.dock.mru-spaces = false;
+  system.defaults.dock.expose-group-apps = true;
+  system.defaults.dock.wvous-bl-corner = 2;
+  system.defaults.dock.wvous-br-corner = 11;
+  system.defaults.NSGlobalDomain.AppleSpacesSwitchOnActivate = false;
+
   # Locale.
   system.defaults.NSGlobalDomain.AppleICUForce24HourTime = true;
   system.defaults.NSGlobalDomain.AppleMeasurementUnits = "Centimeters";
@@ -50,5 +59,4 @@
 
   # Other.
   system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
-  system.defaults.NSGlobalDomain.AppleSpacesSwitchOnActivate = false;
 }
