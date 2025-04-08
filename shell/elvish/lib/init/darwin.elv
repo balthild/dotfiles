@@ -19,10 +19,6 @@ edit:add-var bashenv~ {
   put $@bashenv | each $echo~
 }
 
-if (has-external direnv) {
-  eval (direnv hook elvish | slurp)
-}
-
 # Homebrew
 set-env HOMEBREW_PREFIX /opt/homebrew
 set-env HOMEBREW_CELLAR /opt/homebrew/Cellar

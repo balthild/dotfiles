@@ -27,9 +27,6 @@ if (eq $platform:os windows) {
 
 if (eq $platform:os darwin) {
   shell:alias nix-apply = darwin-rebuild switch --flake ~/.dotfiles/nix
-  shell:alias nsh = {|@pkgs|
-    nix shell 'nixpkgs#'$@pkgs
-  }
 
   shell:alias cask = {|task @args|
     brew $task --cask $@args

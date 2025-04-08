@@ -14,3 +14,8 @@ set edit:completion:matcher[argument] = {|seed| edit:match-prefix $seed &ignore-
 eval (starship init elvish)
 # Suppress timeout messages from starship
 set E:STARSHIP_LOG = 'error'
+
+# Direnv
+if (has-external direnv) {
+  eval (direnv hook elvish | slurp)
+}

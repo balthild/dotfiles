@@ -24,8 +24,7 @@
 
     # Generic
     nix-search-cli
-    hyfetch
-    fastfetch
+    hyfetch-rs
     dotter
     neovim
     ripgrep
@@ -63,7 +62,4 @@
 
   # Elvish requires bash to export the environment variables set by nix.
   programs.bash.enable = true;
-  programs.bash.profileExtra = ''
-    . "$HOME/.cargo/env"
-  '';
 }

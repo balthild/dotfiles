@@ -1,6 +1,21 @@
 { inputs, config, pkgs, ... }:
 
-{
+let
+  overlays = import ./overlays { inherit inputs; };
+in {
+  # Used for backwards compatibility, please read the changelog before changing.
+  # $ darwin-rebuild changelog
+  system.stateVersion = 6;
+
+  # Set Git commit hash for darwin-version.
+  system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
+
+  # The platform the configuration will be used on.
+  nixpkgs.hostPlatform = "aarch64-darwin";
+
+  # Overlays.
+  nixpkgs.overlays = [ overlays ];
+
   # Packages in the system profile.
   environment.systemPackages = with pkgs; [
     coreutils-full
@@ -8,16 +23,6 @@
     git-credential-manager
     git-crypt
   ];
-
-  # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = "aarch64-darwin";
-
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
-  system.stateVersion = 6;
-
-  # Set Git commit hash for darwin-version.
-  system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
 
   # Home Manager requires users being defined here.
   users.users."balthild" = {
