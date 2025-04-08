@@ -1,10 +1,10 @@
-use utils
+use lib/utils
 
 # Environment variables from nix
 var bashenv = []
 if (not (has-env __NIX_DARWIN_SET_ENVIRONMENT_DONE)) {
   # TODO: https://github.com/LnL7/nix-darwin/issues/1402
-  var script = ~/.dotfiles/shell/elvish/lib/env/bashenv.sh
+  var script = ~/.dotfiles/shell/elvish/lib/init/bashenv.sh
   bash --noprofile --norc $script | each {|line|
     use str
     if (str:contains $line '=') {

@@ -1,6 +1,6 @@
 # JDK version switcher for Windows
 
-use utils
+use lib/utils
 
 fn reg-subkeys {|prefix|
   use str
@@ -53,10 +53,12 @@ fn jdk-version-use {|@args|
   java -version
 }
 
-set edit:completion:arg-completer[jver] = {|@args|
-  var versions = (jdk-version-list)
-  for ver [(keys $versions | order)] {
-    var desc = (styled ' ('$versions[$ver]')' dim)
-    edit:complex-candidate &display=$ver$desc $ver
+fn enable-completion {|cmd|
+  set edit:completion:arg-completer[$cmd] = {|@args|
+    var versions = (jdk-version-list)
+    for ver [(keys $versions | order)] {
+      var desc = (styled ' ('$versions[$ver]')' dim)
+      edit:complex-candidate &display=$ver$desc $ver
+    }
   }
 }

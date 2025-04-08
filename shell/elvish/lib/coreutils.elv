@@ -1,5 +1,4 @@
-use platform
-use shell
+use lib/shell
 
 # Set output styles and charset for GNU coreutils
 set-env QUOTING_STYLE 'literal'

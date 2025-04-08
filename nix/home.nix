@@ -40,7 +40,6 @@
     gcc
     ccls
     typst
-    phpactor
     nixfmt-rfc-style
 
     # Dev (generic)
