@@ -11,6 +11,9 @@ default_target_type = "symbolic"
 [nvim.files]
 "nvim" = "~/.config/nvim"
 
+[misc.files]
+"misc/fastfetch.jsonc" = "~/.config/fastfetch/config.jsonc"
+
 [secret.files]
 "secret/ssh-config" = "~/.ssh/config"
 
@@ -19,4 +22,3 @@ default_target_type = "symbolic"
 [wsl]
 [shim]
 [flow]
-[misc]

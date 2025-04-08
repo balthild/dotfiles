@@ -9,8 +9,5 @@ depends = ["git", "shell", "nvim", "rime", "nix", "misc", "secret"]
 "rime" = "~/Library/Rime"
 "rime/options.macos.yaml" = "~/Library/Rime/options.platform.yaml"
 
-[nix.files]
-"nix" = "~/.nixpkgs"
-
 [misc.files]
 "misc/.pycodestyle" = "~/.config/pycodestyle"

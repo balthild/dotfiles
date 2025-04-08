@@ -1,4 +1,4 @@
-{ pkgs, lib, stdenv, fetchurl, makeBinaryWrapper }:
+{ pkgs, lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation {
   name = "hyfetch-rs";
@@ -10,7 +10,7 @@ stdenv.mkDerivation {
     sha256 = "sha256-dJg/BX952Dn3Bf2sBc9vnvaC9vU4HYX2dZYpkPO3mSY=";
   };
 
-  nativeBuildInputs = [ pkgs.unzip makeBinaryWrapper ];
+  nativeBuildInputs = [ pkgs.unzip pkgs.makeBinaryWrapper ];
   buildInputs = [ ];
 
   unpackPhase = ''
