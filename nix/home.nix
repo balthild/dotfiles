@@ -23,7 +23,9 @@
     starship
 
     # Generic
-    neofetch
+    nix-search-cli
+    hyfetch
+    fastfetch
     dotter
     neovim
     ripgrep

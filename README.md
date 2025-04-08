@@ -72,6 +72,14 @@ Apply changes:
 
 ```shell
 darwin-rebuild -- switch --flake ~/.dotfiles/nix
+# or the alias defined in elvish
+nix-apply
+```
+
+Search packages:
+
+```shell
+nix-search neovim
 ```
 
 ### WSL
