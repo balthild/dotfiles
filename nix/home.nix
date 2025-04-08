@@ -43,10 +43,11 @@
     nixfmt-rfc-style
 
     # Dev (generic)
+    direnv
+    devenv
     colima
     docker
     dprint
-    direnv
     watchexec
   ];
 

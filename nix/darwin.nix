@@ -25,6 +25,9 @@
     home = "/Users/balthild";
   };
 
+  # Grant privileges of accessing the nix-daemon.
+  nix.settings.trusted-users = [ "root" "@admin" ];
+
   # Replace nix with lix.
   nix.package = pkgs.lix;
 
