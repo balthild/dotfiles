@@ -8,7 +8,6 @@ sudo -u $E:USER -i zsh -c 'export | xargs printf "%s\n"' | each {|line|
     var name value = (str:split &max=2 '=' $line)
     if (not (str:has-prefix $name SUDO_)) {
       set-env $name $value
-      set foreign-env = [$@foreign-env $name" = "$value]
     }
   }
 }
