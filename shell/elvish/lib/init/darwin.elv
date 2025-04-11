@@ -1,23 +1,19 @@
 use lib/utils
 
 # Environment variables from nix
-var bashenv = []
-if (not (has-env __NIX_DARWIN_SET_ENVIRONMENT_DONE)) {
-  # TODO: https://github.com/LnL7/nix-darwin/issues/1402
-  var script = ~/.dotfiles/shell/elvish/lib/init/bashenv.sh
-  bash --noprofile --norc $script | each {|line|
-    use str
-    if (str:contains $line '=') {
-      var name value = (str:split &max=2 '=' $line)
+# TODO: https://github.com/LnL7/nix-darwin/issues/1402
+sudo -u $E:USER -i zsh -c 'export | xargs printf "%s\n"' | each {|line|
+  use str
+  if (str:contains $line '=') {
+    var name value = (str:split &max=2 '=' $line)
+    if (not (str:has-prefix $name SUDO_)) {
       set-env $name $value
-      set bashenv = [$@bashenv $name" = "$value]
+      set foreign-env = [$@foreign-env $name" = "$value]
     }
   }
 }
 
-edit:add-var bashenv~ {
-  put $@bashenv | each $echo~
-}
+set-env LD_LIBRARY_PATH ~/.nix-profile/lib
 
 # Homebrew
 set-env HOMEBREW_PREFIX /opt/homebrew

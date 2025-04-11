@@ -22,9 +22,9 @@ stdenv.mkDerivation {
   '';
 
   installPhase = ''
-    mkdir -p $out/libexec
-    mkdir -p $out/bin
-    cp hyfetch/rust/hyfetch $out/libexec/hyfetch
+    install -d $out/libexec
+    install -d $out/bin
+    install hyfetch/rust/hyfetch $out/libexec/hyfetch
     makeBinaryWrapper $out/libexec/hyfetch $out/bin/hyfetch \
       --prefix PATH : ${lib.makeBinPath [ pkgs.fastfetch ]}
   '';

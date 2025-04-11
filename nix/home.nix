@@ -34,6 +34,7 @@
     wget
 
     # Dev (language-specific)
+    rustup
     nodejs
     corepack
     go
