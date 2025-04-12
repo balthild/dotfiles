@@ -13,7 +13,7 @@ in {
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  # Overlays.
+  # Overlays for custom packages.
   nixpkgs.overlays = [ overlays ];
 
   # Packages in the system profile.

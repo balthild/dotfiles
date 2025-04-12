@@ -55,6 +55,12 @@ fn prepend-paths {|p|
   set paths = [(path:abs $p) $@paths]
 }
 
+fn drop-paths {|p|
+  use path
+  var abs = (path:abs $p)
+  set paths = [(put $@paths | keep-if {|x| not-eq $x $abs })]
+}
+
 fn pad-right {|len s|
   use str
   if (<= $len (count $s)) {
