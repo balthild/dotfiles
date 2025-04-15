@@ -3,6 +3,7 @@ depends = ["git", "shell", "nvim", "rime", "nix", "misc", "secret"]
 
 [shell.files]
 "shell/ghostty.conf" = "~/Library/Application Support/com.mitchellh.ghostty/config"
+"shell/nushell" = "~/Library/Application Support/nushell"
 
 [rime.files]
 # "rime" = "~/.local/share/fcitx5/rime"

@@ -19,6 +19,7 @@
   home.packages = with pkgs; [
     # Shell
     elvish
+    nushell
     carapace
     starship
 

@@ -5,7 +5,7 @@ default_target_type = "symbolic"
 "git" = "~"
 
 [shell.files]
-"shell/elvish" = "~/.config/elvish/"
+"shell/elvish" = "~/.config/elvish"
 "shell/starship.toml" = "~/.config/starship.toml"
 
 [nvim.files]
