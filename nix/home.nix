@@ -42,10 +42,10 @@
     gcc
     ccls
     typst
+    nixd
     nixfmt-rfc-style
 
     # Dev (generic)
-    direnv
     devenv
     colima
     docker
@@ -63,4 +63,9 @@
 
   # Elvish requires zsh to export the environment variables set by nix.
   programs.zsh.enable = true;
+
+  # Enable direnv, as well as nix-direnv, which requires modern bash.
+  programs.bash.enable = true;
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
 }
