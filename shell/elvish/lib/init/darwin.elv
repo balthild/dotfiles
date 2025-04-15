@@ -1,14 +1,10 @@
-use lib/utils
+use str
 
 # Nix and Homebrew have their environment variables set for zsh.
-sudo -u $E:USER -i zsh -c 'export | xargs printf "%s\n"' | each {|line|
-  use str
-  if (str:contains $line '=') {
-    var name value = (str:split &max=2 '=' $line)
-    if (not (str:has-prefix $name SUDO_)) {
-      set-env $name $value
-    }
-  }
-}
+sudo -u $E:USER -i zsh -c 'env' |
+  keep-if {|line| not (str:has-prefix $line 'SUDO_') } |
+  each {|line| put [(str:split &max=2 '=' $line)] } |
+  keep-if {|entry| not (has-value [_ PWD OLDPWD SHLVL] $entry[0]) } |
+  each {|entry| set-env $entry[0] $entry[1] }
 
 set-env HOMEBREW_NO_ENV_HINTS true

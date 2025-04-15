@@ -10,6 +10,9 @@ shell:alias . = $shell:source~
 shell:alias clear = $edit:clear~
 shell:alias vim = nvim
 
+use lib/utils
+shell:alias kill-elvish-daemon = $utils:kill-daemon~
+
 use lib/pyvenv
 shell:alias activate = $pyvenv:activate~
 
