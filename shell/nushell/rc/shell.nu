@@ -1,12 +1,11 @@
-let autoload = ($nu.data-dir | path join "vendor/autoload")
-mkdir $autoload
+mkdir $nu.user-autoload-dirs.0
 
 # Carapace
-carapace _carapace nushell | save -f ($autoload | path join "carapace.nu")
+carapace _carapace nushell | save -f ($nu.user-autoload-dirs.0 | path join "carapace.nu")
 $env.CARAPACE_MATCH = 'CASE_INSENSITIVE'
 
 # Starship
-starship init nu | save -f ($autoload | path join "starship.nu")
+starship init nu | save -f ($nu.user-autoload-dirs.0 | path join "starship.nu")
 $env.STARSHIP_LOG = 'error'
 
 # Direnv
