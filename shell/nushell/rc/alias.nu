@@ -2,6 +2,8 @@ alias ll = ls -l
 alias la = ls -al
 alias vim = nvim
 
+# This doesn't work
+# https://github.com/nushell/nushell/issues/5068
 if $nu.os-info.name == 'macos' {
   alias nix-apply = darwin-rebuild switch --flake ~/.dotfiles/nix
 
