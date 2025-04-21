@@ -12,20 +12,32 @@ fn find-next-token {
   put (+ $edit:-dot $match[end])
 }
 
-fn move-to-prev-token {
+fn move-prev-token {
   set edit:-dot = (find-prev-token)
 }
 
-fn move-to-next-token {
+fn move-next-token {
   set edit:-dot = (find-next-token)
 }
 
-fn delete-to-prev-token {
-  var pos = (find-prev-token)
+fn delete-prev-token {
+  var start = (find-prev-token)
+  var end = $edit:-dot
 
-  var before = $edit:current-command[..$pos]
-  var after = $edit:current-command[$edit:-dot..]
+  var before = $edit:current-command[..$start]
+  var after = $edit:current-command[$end..]
 
   set edit:current-command = $before$after
-  set edit:-dot = $pos
+  set edit:-dot = $start
+}
+
+fn delete-next-token {
+  var start = $edit:-dot
+  var end = (find-next-token)
+
+  var before = $edit:current-command[..$start]
+  var after = $edit:current-command[$end..]
+
+  set edit:current-command = $before$after
+  set edit:-dot = $start
 }
