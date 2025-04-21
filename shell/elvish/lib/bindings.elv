@@ -11,9 +11,9 @@ set edit:insert:binding[Ctrl-Delete] = { cursor:delete-prev-token }
 # set edit:insert:binding[Ctrl-Shift-Backspace] = { cursor:delete-next-token }
 # set edit:insert:binding[Ctrl-Shift-Delete] = { cursor:delete-next-token }
 
-set edit:insert:binding[Meta-Shift-Backspace] = { echo meta }
-set edit:insert:binding[Ctrl-Shift-Backspace] = { echo ctrl }
-set edit:insert:binding[Alt-Shift-Backspace] = { echo alt }
+# TODO: Why these don't work?
+set edit:insert:binding[Ctrl-Shift-Backspace] = { echo ctrl+shift+backspace }
+set edit:insert:binding[Alt-Shift-Backspace] = { echo alt+shift+backspace }
 
 # Quick cursor moving
 set edit:insert:binding[Alt-Left] = { cursor:move-prev-token }
