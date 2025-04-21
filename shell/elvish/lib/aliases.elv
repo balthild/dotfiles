@@ -34,4 +34,8 @@ if (eq $platform:os darwin) {
   shell:alias cask = {|task @args|
     brew $task --cask $@args
   }
+
+  shell:alias ssh-copy-terminfo = {|server @args|
+    infocmp -x | ssh $server $@args -- tic -x -
+  }
 }

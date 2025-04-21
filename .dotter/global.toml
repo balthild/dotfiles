@@ -16,6 +16,7 @@ default_target_type = "symbolic"
 
 [secret.files]
 "secret/ssh-config" = "~/.ssh/config"
+"secret/ssh-config.local" = "~/.ssh/config.d/local"
 
 [rime]
 [nix]
