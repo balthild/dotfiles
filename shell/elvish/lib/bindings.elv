@@ -6,12 +6,13 @@ set edit:insert:binding[Alt-Delete] = { cursor:delete-prev-token }
 set edit:insert:binding[Ctrl-Backspace] = { cursor:delete-prev-token }
 set edit:insert:binding[Ctrl-Delete] = { cursor:delete-prev-token }
 
-# set edit:insert:binding[Alt-Shift-Backspace] = { cursor:delete-next-token }
-# set edit:insert:binding[Alt-Shift-Delete] = { cursor:delete-next-token }
-# set edit:insert:binding[Ctrl-Shift-Backspace] = { cursor:delete-next-token }
-# set edit:insert:binding[Ctrl-Shift-Delete] = { cursor:delete-next-token }
+set edit:insert:binding[Alt-Shift-Backspace] = { cursor:delete-next-token }
+set edit:insert:binding[Alt-Shift-Delete] = { cursor:delete-next-token }
+set edit:insert:binding[Ctrl-Shift-Backspace] = { cursor:delete-next-token }
+set edit:insert:binding[Ctrl-Shift-Delete] = { cursor:delete-next-token }
 
-# TODO: Why these don't work?
+# Why these don't work?
+# https://github.com/elves/elvish/issues/1665
 set edit:insert:binding[Ctrl-Shift-Backspace] = { echo ctrl+shift+backspace }
 set edit:insert:binding[Alt-Shift-Backspace] = { echo alt+shift+backspace }
 
