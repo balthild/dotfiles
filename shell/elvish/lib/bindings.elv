@@ -2,19 +2,11 @@ use lib/cursor
 
 # Quick deletion
 set edit:insert:binding[Alt-Backspace] = { cursor:delete-prev-token }
-set edit:insert:binding[Alt-Delete] = { cursor:delete-prev-token }
 set edit:insert:binding[Ctrl-Backspace] = { cursor:delete-prev-token }
+set edit:insert:binding[Alt-Delete] = { cursor:delete-prev-token }
 set edit:insert:binding[Ctrl-Delete] = { cursor:delete-prev-token }
-
-set edit:insert:binding[Alt-Shift-Backspace] = { cursor:delete-next-token }
 set edit:insert:binding[Alt-Shift-Delete] = { cursor:delete-next-token }
-set edit:insert:binding[Ctrl-Shift-Backspace] = { cursor:delete-next-token }
 set edit:insert:binding[Ctrl-Shift-Delete] = { cursor:delete-next-token }
-
-# Why these don't work?
-# https://github.com/elves/elvish/issues/1896
-set edit:insert:binding[Ctrl-Shift-Backspace] = { echo ctrl+shift+backspace }
-set edit:insert:binding[Alt-Shift-Backspace] = { echo alt+shift+backspace }
 
 # Quick cursor moving
 set edit:insert:binding[Alt-Left] = { cursor:move-prev-token }

@@ -39,3 +39,13 @@ if (eq $platform:os darwin) {
     infocmp -x | ssh $server $@args -- tic -x -
   }
 }
+
+# with-stty raw { read-upto . } | put (one)[..-1]
+shell:alias with-stty = {|@args cmd~ &tty=/dev/tty|
+  #: Usage: with-stty $@stty-args $cmd
+  #: Runs $cmd with tty settings temporarily set according to $@stty-args
+  var orig = (stty -g <$tty)
+  defer { stty $orig <$tty }
+  stty $@args <$tty
+  cmd
+}
