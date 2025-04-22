@@ -80,7 +80,3 @@ fn callable {|cmd|
     fail 'wrong type: need string or fn, got '$kind
   }
 }
-
-fn kill-daemon {
-  ps aux | grep -e '^balthild' | grep 'elvish -daemon ' | grep -v grep | awk '{ print $2 }' | kill (one)
-}

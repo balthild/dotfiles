@@ -10,9 +10,6 @@ shell:alias . = $shell:source~
 shell:alias clear = $edit:clear~
 shell:alias vim = nvim
 
-use lib/utils
-shell:alias kill-elvish-daemon = $utils:kill-daemon~
-
 use lib/pyvenv
 shell:alias activate = $pyvenv:activate~
 
@@ -38,6 +35,15 @@ if (eq $platform:os darwin) {
   shell:alias ssh-copy-terminfo = {|server @args|
     infocmp -x | ssh $server $@args -- tic -x -
   }
+}
+
+shell:alias kill-elvish-daemon = {
+  ps aux |
+    grep -e '^balthild' |
+    grep 'elvish -daemon ' |
+    grep -v grep |
+    awk '{ print $2 }' |
+    each {|pid| kill $pid }
 }
 
 # with-stty raw { read-upto . } | put (one)[..-1]
