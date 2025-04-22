@@ -20,4 +20,4 @@ Modifiers:
 
 The value of `<modifier>` is `sum(...modifiers) + 1`.
 
-Modifiers are put as an extra parameter before the final character. Therefore, if the character has its own parameter (such as `C` and `D`), the semicolon must not be omitted even when the parameter is omitted, otherwise the modifier will be interpreted as the parameter.
+Modifiers are put as an extra parameter before the final character. Therefore, if the character has its own parameter (such as `C` and `D`), the semicolon must not be omitted even when the parameter is omitted, otherwise the modifier will be interpreted as a parameter.

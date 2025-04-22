@@ -28,6 +28,7 @@
     hyfetch-rs
     dotter
     neovim
+    htop
     ripgrep
     magic-wormhole-rs
     yt-dlp
