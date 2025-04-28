@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: cargo-release
+description: Streamline your crate release process
+completion:
+  positional:
+    - [ major, minor, patch, release, rc, beta, alpha ]

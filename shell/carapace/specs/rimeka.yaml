@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: rimeka
+description: Rimeka
+flags:
+  -l, --list?: List known packages
+  -s, --select?: Select package interactively
+  -f, --frontend=: Specify the RIME frontend
+  -d, --dir=: Specify the directory of RIME configurations
+persistentflags:
+  -h, --help: Prints help information
+  -V, --version: Prints version information
+completion:
+  flag:
+    frontend:
+      - fcitx-rime
+      - fcitx5-rime
+      - ibus-rime
+      - squirrel
+      - weasel
+  positionalany: ["$(rimeka -l)"]
