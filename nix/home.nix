@@ -27,7 +27,7 @@
     nix-search-cli
     hyfetch-rs
     dotter
-    neovim
+    helix
     htop
     ripgrep
     magic-wormhole-rs

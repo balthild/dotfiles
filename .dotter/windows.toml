@@ -2,6 +2,7 @@
 depends = [
     "git",
     "shell",
+    "helix",
     "nvim",
     "rime",
     "wsl",
@@ -12,11 +13,14 @@ depends = [
 ]
 
 [shell.files]
-"shell/elvish" = "~/AppData/Roaming/elvish"
-"shell/nushell" = "~/AppData/Roaming/nushell"
+"shell/elvish" = "~/AppData/Roaming/elvish/"
+"shell/nushell" = "~/AppData/Roaming/nushell/"
+
+[helix.files]
+"helix" = "~/AppData/Roaming/helix/"
 
 [nvim.files]
-"nvim" = "~/AppData/Local/nvim"
+"nvim" = "~/AppData/Local/nvim/"
 
 [rime.files]
 "rime" = "~/AppData/Roaming/Rime"
@@ -31,7 +35,7 @@ depends = [
 "shim/msys.shim" = "~/.local/bin/msys.shim"
 
 [flow.files]
-"flow" = "~/AppData/Roaming/FlowLauncher"
+"flow" = "~/AppData/Roaming/FlowLauncher/"
 
 [misc.files]
 "misc/.pycodestyle" = "~/.pycodestyle"

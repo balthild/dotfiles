@@ -8,7 +8,6 @@ shell:alias source = $shell:source~
 shell:alias . = $shell:source~
 
 shell:alias clear = $edit:clear~
-shell:alias vim = nvim
 
 use lib/pyvenv
 shell:alias activate = $pyvenv:activate~

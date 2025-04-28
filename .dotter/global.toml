@@ -5,11 +5,15 @@ default_target_type = "symbolic"
 "git" = "~"
 
 [shell.files]
-"shell/elvish" = "~/.config/elvish"
+"shell/elvish" = "~/.config/elvish/"
+"shell/carapace" = "~/.config/carapace/"
 "shell/starship.toml" = "~/.config/starship.toml"
 
+[helix.files]
+"helix" = "~/.config/helix/"
+
 [nvim.files]
-"nvim" = "~/.config/nvim"
+"nvim" = "~/.config/nvim/"
 
 [misc.files]
 "misc/fastfetch.jsonc" = "~/.config/fastfetch/config.jsonc"
