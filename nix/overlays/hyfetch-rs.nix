@@ -1,7 +1,7 @@
 { pkgs, lib, stdenv, fetchurl }:
 
 stdenv.mkDerivation {
-  name = "hyfetch-rs";
+  pname = "hyfetch-rs";
   version = "2.0.0-rc1";
 
   # https://pypi.org/project/HyFetch/2.0.0rc1/#files

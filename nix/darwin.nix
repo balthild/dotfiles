@@ -36,6 +36,9 @@ in {
   # Replace nix with lix.
   nix.package = pkgs.lix;
 
+  # Eliminate warnings of "Nix search path entry '...' does not exist, ignoring".
+  nix.channel.enable = false;
+
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
