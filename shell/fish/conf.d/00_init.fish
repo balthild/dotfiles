@@ -5,4 +5,7 @@ for line in (sudo -u $USER -i zsh -c 'env' | grep -E -v '^(SUDO_.*|_|PWD|OLDPWD|
   # echo "Exported key $item[1] = $item[2]"
 end
 
+set -gx LD_LIBRARY_PATH ~/.nix-profile/lib
+set -gx LIBRARY_PATH ~/.nix-profile/lib
+
 set -Ux HOMEBREW_NO_ENV_HINTS true
