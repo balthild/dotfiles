@@ -1,3 +1,5 @@
+set fish_pager_color_description '-d'
+
 set -Ux QUOTING_STYLE 'literal'
 
 alias ls 'ls --color=auto'
