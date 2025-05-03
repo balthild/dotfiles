@@ -5,6 +5,7 @@ default_target_type = "symbolic"
 "git" = "~"
 
 [shell.files]
+"shell/fish" = "~/.config/fish/"
 "shell/elvish" = "~/.config/elvish/"
 "shell/carapace" = "~/.config/carapace/"
 "shell/starship.toml" = "~/.config/starship.toml"

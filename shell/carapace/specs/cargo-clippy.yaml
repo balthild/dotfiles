@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: cargo-clippy
+description: A collection of lints for Rust.
+flags:
+  --target=: Check for the target triple
+completion:
+  flag:
+    target: ["$(rustup target list --installed)"]

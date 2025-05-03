@@ -18,6 +18,7 @@
   # Packages in the user profile.
   home.packages = with pkgs; [
     # Shell
+    fish
     elvish
     nushell
     carapace
@@ -57,7 +58,7 @@
 
   # Environment variables to be set at login.
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "hx";
   };
 
   # Let Home Manager install and manage itself.

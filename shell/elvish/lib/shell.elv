@@ -1,6 +1,6 @@
 # Ghostty
 if (and (eq $E:TERM xterm-ghostty) (not-eq $E:GHOSTTY_INTEGRATION_LOADED 1)) {
-  use ghostty-integration
+  nop ?(use ghostty-integration)
   set-env GHOSTTY_INTEGRATION_LOADED 1
 }
 
