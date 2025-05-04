@@ -72,7 +72,7 @@ Apply changes:
 
 ```shell
 darwin-rebuild -- switch --flake ~/.dotfiles/nix
-# or the alias defined in elvish
+# or the shell alias (fish/elvish/nushell)
 nix-apply
 ```
 

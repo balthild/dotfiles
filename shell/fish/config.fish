@@ -7,7 +7,7 @@ alias ll 'ls --color=auto -l'
 alias la 'ls --color=auto -la'
 alias grep 'grep --color'
 
-alias nix-apply 'darwin-rebuild switch --flake ~/.dotfiles/nix'
+abbr -a nix-apply 'darwin-rebuild switch --flake ~/.dotfiles/nix'
 
 function cask
   brew $argv[1] --cask $argv[2..]
