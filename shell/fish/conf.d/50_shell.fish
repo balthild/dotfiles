@@ -1,5 +1,4 @@
 # Carapace
-set -gx CARAPACE_BRIDGES 'fish'
 set -gx CARAPACE_MATCH 'CASE_INSENSITIVE'
 carapace _carapace | source
 
