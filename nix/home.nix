@@ -64,7 +64,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # Elvish requires zsh to export the environment variables set by nix.
+  # Shells require zsh to export the environment variables set by nix.
   programs.zsh.enable = true;
 
   # Enable direnv, as well as nix-direnv, which requires modern bash.
