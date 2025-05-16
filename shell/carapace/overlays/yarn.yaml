@@ -1,6 +1,5 @@
 # yaml-language-server: $schema=https://carapace.sh/schemas/command.json
 name: yarn
-description: Node.js package manager.
 completion:
   positionalany:
     - "$carapace.tools.npm.Scripts"
@@ -8,7 +7,6 @@ completion:
 
 commands:
   - name: run
-    description: Run a script or executable.
     completion:
       positionalany:
         - "$carapace.tools.npm.Scripts"
