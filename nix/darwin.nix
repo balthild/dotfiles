@@ -24,7 +24,10 @@ in {
     git-crypt
   ];
 
-  # Home Manager requires users being defined here.
+  # Required by some `system.defaults.*` settings.
+  system.primaryUser = "balthild";
+
+  # Configure users.
   users.users."balthild" = {
     name = "balthild";
     home = "/Users/balthild";
