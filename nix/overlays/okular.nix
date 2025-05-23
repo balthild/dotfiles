@@ -42,12 +42,8 @@ stdenvNoCC.mkDerivation {
   '';
 
   installPhase = ''
-    runHook preInstall
-
     mkdir -p $out/Applications
     cp -r okular.app $out/Applications
     cp -r okular_droplet.app $out/Applications
-
-    runHook postInstall
   '';
 }

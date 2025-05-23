@@ -1,6 +1,6 @@
-{ pkgs, lib, stdenv, fetchurl }:
+{ pkgs, lib, stdenvNoCC, fetchurl }:
 
-stdenv.mkDerivation {
+stdenvNoCC.mkDerivation {
   pname = "hyfetch-rs";
   version = "2.0.0-rc1";
 

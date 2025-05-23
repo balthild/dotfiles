@@ -15,7 +15,7 @@ alias grep 'grep --color'
 abbr -a ll 'ls -l'
 abbr -a la 'ls -la'
 
-abbr -a nix-apply 'darwin-rebuild switch --flake ~/.dotfiles/nix'
+abbr -a nix-apply 'sudo darwin-rebuild switch --flake ~/.dotfiles/nix'
 
 function cask
   brew $argv[1] --cask $argv[2..]
