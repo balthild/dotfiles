@@ -13,7 +13,7 @@ in {
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  # Overlays for custom packages.
+  # Custom packages.
   nixpkgs.overlays = [ overlays ];
 
   # Packages in the system profile.
@@ -53,7 +53,7 @@ in {
   system.defaults.dock.orientation = "left";
   system.defaults.dock.show-recents = false;
   system.defaults.dock.mru-spaces = false;
-  system.defaults.dock.expose-group-apps = true;
+  system.defaults.dock.expose-group-apps = false;
   system.defaults.dock.wvous-bl-corner = 2;
   system.defaults.dock.wvous-br-corner = 11;
   system.defaults.NSGlobalDomain.AppleSpacesSwitchOnActivate = false;

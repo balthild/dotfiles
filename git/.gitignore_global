@@ -10,3 +10,4 @@
 .DS_*
 
 *_ignored.*
+.ccls-cache/
