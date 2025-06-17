@@ -51,6 +51,7 @@
 
     # Dev (generic)
     devenv
+    lima
     colima
     docker
     dprint
@@ -72,4 +73,9 @@
   programs.bash.enable = true;
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
+
+  home.activation.okular-droplet = lib.hm.dag.entryAfter [ "installPackages" ] ''
+    $DRY_RUN_CMD rm -rf ~/Applications/okular_droplet.app
+    $DRY_RUN_CMD cp -r ${pkgs.okular}/libexec/okular_droplet.app ~/Applications/okular_droplet.app
+  '';
 }

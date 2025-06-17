@@ -5,8 +5,8 @@ stdenvNoCC.mkDerivation {
   version = "25.04";
 
   src = fetchurl {
-    url = "https://cdn.kde.org/ci-builds/graphics/okular/release-25.04/macos-arm64/okular-release_25.04-6212-macos-clang-arm64.dmg";
-    sha256 = "sha256-eaGO8pyIAZnuZMmvK/xtgmbqrypPVViOnjgGg64ozlw=";
+    url = "https://cdn.kde.org/ci-builds/graphics/okular/release-25.04/macos-arm64/okular-release_25.04-6287-macos-clang-arm64.dmg";
+    sha256 = "sha256-86V074D/ZCLZ885NVEq0u0gAqdfuWYJQTi1Xj/V+S8k=";
   };
   sourceRoot = ".";
 
@@ -44,6 +44,8 @@ stdenvNoCC.mkDerivation {
   installPhase = ''
     mkdir -p $out/Applications
     cp -r okular.app $out/Applications
-    cp -r okular_droplet.app $out/Applications
+
+    mkdir -p $out/libexec
+    cp -r okular_droplet.app $out/libexec
   '';
 }
