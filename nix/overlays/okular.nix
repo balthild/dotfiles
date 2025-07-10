@@ -5,8 +5,8 @@ stdenvNoCC.mkDerivation {
   version = "25.04";
 
   src = fetchurl {
-    url = "https://cdn.kde.org/ci-builds/graphics/okular/release-25.04/macos-arm64/okular-release_25.04-6287-macos-clang-arm64.dmg";
-    sha256 = "sha256-86V074D/ZCLZ885NVEq0u0gAqdfuWYJQTi1Xj/V+S8k=";
+    url = "https://cdn.kde.org/ci-builds/graphics/okular/release-25.04/macos-arm64/okular-release_25.04-6319-macos-clang-arm64.dmg";
+    sha256 = "sha256-5tkMTk/GPUdYhtrOOJh6bqkK+bSKU7UX8u2KaT+Wfmk=";
   };
   sourceRoot = ".";
 

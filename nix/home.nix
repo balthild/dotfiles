@@ -19,8 +19,6 @@
   home.packages = with pkgs; [
     # Shell
     fish
-    elvish
-    nushell
     carapace
     starship
 
@@ -42,6 +40,7 @@
     nodejs
     corepack
     go
+    delve
     uv
     gcc
     ccls
@@ -77,5 +76,6 @@
   home.activation.okular-droplet = lib.hm.dag.entryAfter [ "installPackages" ] ''
     $DRY_RUN_CMD rm -rf ~/Applications/okular_droplet.app
     $DRY_RUN_CMD cp -r ${pkgs.okular}/libexec/okular_droplet.app ~/Applications/okular_droplet.app
+    $DRY_RUN_CMD chmod -R u+w ~/Applications/okular_droplet.app
   '';
 }
