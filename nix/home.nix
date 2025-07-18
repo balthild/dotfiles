@@ -34,6 +34,7 @@
     ffmpeg-full
     wget
     okular
+    mitmproxy
 
     # Dev (language-specific)
     rustup
