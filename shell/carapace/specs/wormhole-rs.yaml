@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: wormhole-rs
+flags:
+  -l, --list?: List known packages
+  -s, --select?: Select package interactively
+  -f, --frontend=: Specify the RIME frontend
+  -v, --verbose: Enable logging to stdout, for debugging purposes
+  -h, --help: Print help
+  -V, --version: Print version
+
+commands:
+  - name: send
+    aliases: [ tx ]
+    description: "Send a file or a folder"
+    completion:
+      positional:
+        - [ "$files", "$directories" ]
+
+  - name: receive
+    aliases: [ rx ]
+    description: "Receive a file or a folder"
+
+  - name: send-many
+    description: "Send a file to many recipients"
+    completion:
+      positionalany:
+        - "$files"
+        - "$directories"
+
+  - name: forward
+    description: "Forward ports from one machine to another"

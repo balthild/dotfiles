@@ -4,4 +4,4 @@ flags:
   --target=: Check for the target triple
 completion:
   flag:
-    target: ["$(rustup target list --installed)"]
+    target: [ "$(rustup target list --installed)" ]

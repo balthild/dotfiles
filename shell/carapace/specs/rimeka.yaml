@@ -15,4 +15,4 @@ completion:
       - ibus-rime
       - squirrel
       - weasel
-  positionalany: ["$(rimeka -l)"]
+  positionalany: [ "$(rimeka -l)" ]
