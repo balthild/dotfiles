@@ -1,9 +1,6 @@
 # yaml-language-server: $schema=https://carapace.sh/schemas/command.json
 name: wormhole-rs
 flags:
-  -l, --list?: List known packages
-  -s, --select?: Select package interactively
-  -f, --frontend=: Specify the RIME frontend
   -v, --verbose: Enable logging to stdout, for debugging purposes
   -h, --help: Print help
   -V, --version: Print version
