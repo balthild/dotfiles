@@ -51,11 +51,11 @@
 
     # Dev (generic)
     devenv
-    lima
     colima
     docker
     dprint
     watchexec
+    dive
   ];
 
   # Environment variables to be set at login.
