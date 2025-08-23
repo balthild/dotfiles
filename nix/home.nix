@@ -62,18 +62,25 @@
   home.sessionVariables = {
     EDITOR = "hx";
   };
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+    "$HOME/.local/bin"
+    "$HOME/.local/share/npm/global/bin/"
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # Shells require zsh to export the environment variables set by nix.
+  # Set environment variables for the shells.
+  programs.bash.enable = true;
   programs.zsh.enable = true;
 
-  # Enable direnv, as well as nix-direnv, which requires modern bash.
-  programs.bash.enable = true;
+  # Enable direnv.
+  # Note: nix-direnv requires modern bash.
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
+  # Enable okular in open-with menu.
   home.activation.okular-droplet = lib.hm.dag.entryAfter [ "installPackages" ] ''
     $DRY_RUN_CMD rm -rf ~/Applications/okular_droplet.app
     $DRY_RUN_CMD cp -r ${pkgs.okular}/libexec/okular_droplet.app ~/Applications/okular_droplet.app
