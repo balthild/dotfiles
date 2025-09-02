@@ -24,7 +24,8 @@
 
     # Generic
     nix-search-cli
-    hyfetch-rs
+    hyfetch
+    fastfetch
     dotter
     helix
     htop
