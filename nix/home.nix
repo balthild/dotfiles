@@ -67,6 +67,7 @@
     "$HOME/.cargo/bin"
     "$HOME/.local/bin"
     "$HOME/.local/share/npm/global/bin/"
+    "$HOME/go/bin"
   ];
 
   # Let Home Manager install and manage itself.
