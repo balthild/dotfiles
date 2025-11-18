@@ -1,8 +1,29 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+format = """
+$username\
+$hostname\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$nix_shell\
+$direnv\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$shell\
+$character
+"""
+
 [directory]
 truncation_length = 0
 truncate_to_repo = false
-truncation_symbol = '.../'
+truncation_symbol = ".../"
 
-[character]
-#success_symbol = "[\uE0B0](fg:black bg:#FFFFFF)[\uE0B0](fg:#FFFFFF bg:#F5A9B8)[\uE0B0](fg:#F5A9B8 bg:#5BCEFA)[\uE0B0](fg:#5BCEFA)"
-#error_symbol = "[\uE0B0](fg:black bg:#E06C75)[\uE0B0](fg:#E06C75 bg:black)[\uE0B0](fg:black bg:#E06C75)[\uE0B0](fg:#E06C75)"
+[nix_shell]
+symbol = "❄️ "
