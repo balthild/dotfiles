@@ -5,9 +5,6 @@ for line in (sudo -u $USER -i zsh -c 'env' | grep -v -E '^(SUDO_.*|_|PWD|OLDPWD|
   # echo "Exported key $item[1] = $item[2]"
 end
 
-set -gx LD_LIBRARY_PATH ~/.nix-profile/lib:"$LD_LIBRARY_PATH"
-set -gx LIBRARY_PATH ~/.nix-profile/lib:"$LIBRARY_PATH"
-
 set -gx HOMEBREW_NO_ENV_HINTS true
 
 # Re-add the paths to make them take precedence over Homebrew.

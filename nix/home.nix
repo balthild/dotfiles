@@ -62,6 +62,8 @@
   # Environment variables to be set at login.
   home.sessionVariables = {
     EDITOR = "hx";
+    LIBRARY_PATH = "$HOME/.nix-profile/lib:$LIBRARY_PATH";
+    LD_LIBRARY_PATH = "$HOME/.nix-profile/lib:$LD_LIBRARY_PATH";
   };
   home.sessionPath = [
     "$HOME/.cargo/bin"
