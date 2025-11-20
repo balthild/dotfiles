@@ -16,6 +16,7 @@ abbr -a ll 'ls -l'
 abbr -a la 'ls -la'
 
 abbr -a nix-apply 'sudo darwin-rebuild switch --flake ~/.dotfiles/nix'
+abbr -a nix-locate 'nix run github:nix-community/nix-index-database'
 
 function cask
   brew $argv[1] --cask $argv[2..]

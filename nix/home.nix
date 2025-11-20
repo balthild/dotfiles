@@ -45,7 +45,7 @@
     delve
     uv
     gcc
-    ccls
+    clang-tools
     typst
     nixd
     nixfmt-rfc-style
