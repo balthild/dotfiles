@@ -44,7 +44,7 @@
     go
     delve
     uv
-    gcc
+    clang
     clang-tools
     typst
     nixd
