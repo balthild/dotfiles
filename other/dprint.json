@@ -4,7 +4,7 @@
     "**/*-lock.json",
   ],
   "imporg": {
-    "aliases": ["^~/", "^@/", "^virtual:"],
+    "aliases": ["^#", "^~/", "^@/", "^virtual:"],
   },
   "typescript": {
     "indentWidth": 4,
