@@ -1,5 +1,15 @@
 [default]
-depends = ["git", "shell", "helix", "nvim", "rime", "nix", "misc", "secret"]
+depends = [
+    "git",
+    "shell",
+    "helix",
+    "nvim",
+    "rime",
+    "nix",
+    "misc",
+    "secret",
+    "brew",
+]
 
 [shell.files]
 "shell/carapace" = "~/Library/Application Support/carapace/"
@@ -13,3 +23,6 @@ depends = ["git", "shell", "helix", "nvim", "rime", "nix", "misc", "secret"]
 
 [misc.files]
 "misc/.pycodestyle" = "~/.config/pycodestyle"
+
+[brew.files]
+"brew" = "/opt/homebrew/Library/Taps/balthild/homebrew-dotfiles"

@@ -34,7 +34,6 @@
     yt-dlp
     ffmpeg-full
     wget
-    okular
     mitmproxy
 
     # Dev (language-specific)
@@ -83,11 +82,4 @@
   # Note: nix-direnv requires modern bash.
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
-
-  # Enable okular in open-with menu.
-  home.activation.okular-droplet = lib.hm.dag.entryAfter [ "installPackages" ] ''
-    $DRY_RUN_CMD rm -rf ~/Applications/okular_droplet.app
-    $DRY_RUN_CMD cp -r ${pkgs.okular}/libexec/okular_droplet.app ~/Applications/okular_droplet.app
-    $DRY_RUN_CMD chmod -R u+w ~/Applications/okular_droplet.app
-  '';
 }
