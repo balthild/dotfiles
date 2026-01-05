@@ -43,13 +43,17 @@ cask "okular" do
     system_command "/usr/bin/codesign",
       args: [
         "--force",
-        "--sign", "-",
+        "--sign",
+        "-",
         "--timestamp=none",
         "#{appdir}/okular_droplet.app"
       ]
   end
 
-  uninstall delete: "#{appdir}/okular_droplet.app"
+  uninstall pkgutil: [
+    "org.kde.okular",
+    "com.apple.ScriptEditor.id.okular_droplet",
+  ]
 
   zap trash: [
     "~/Library/Preferences/org.kde.okular.plist",
