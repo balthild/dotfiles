@@ -38,9 +38,9 @@
 
     # Dev (language-specific)
     rustup
-    nodejs
     # https://github.com/NixOS/nixpkgs/issues/482918
-    # corepack
+    nodejs_24
+    corepack_24
     go
     delve
     uv
@@ -69,7 +69,7 @@
     "$HOME/.cargo/bin"
     "$HOME/.local/bin"
     "$HOME/.local/share/uv/tools"
-    "$HOME/.local/share/npm/global/bin/"
+    "$HOME/.local/share/npm/global/bin"
     "$HOME/go/bin"
   ];
 
