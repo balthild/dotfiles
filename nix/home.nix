@@ -39,7 +39,8 @@
     # Dev (language-specific)
     rustup
     nodejs
-    corepack
+    # https://github.com/NixOS/nixpkgs/issues/482918
+    # corepack
     go
     delve
     uv
@@ -47,7 +48,7 @@
     clang-tools
     typst
     nixd
-    nixfmt-rfc-style
+    nixfmt
 
     # Dev (generic)
     devenv
@@ -67,6 +68,7 @@
   home.sessionPath = [
     "$HOME/.cargo/bin"
     "$HOME/.local/bin"
+    "$HOME/.local/share/uv/tools"
     "$HOME/.local/share/npm/global/bin/"
     "$HOME/go/bin"
   ];

@@ -1,8 +1,7 @@
 cask "okular" do
-  version "25.12-7067"
-  sha256 "50dfeabb00c598b3ee5f4802162084e778010d080d159bfeb4e4a34a1f687d4c"
+  version "25.12-7123"
 
-  url "https://cdn.kde.org/ci-builds/graphics/okular/release-25.12/macos-arm64/okular-release_25.12-7067-macos-clang-arm64.dmg"
+  url "https://cdn.kde.org/ci-builds/graphics/okular/release-25.12/macos-arm64/okular-release_25.12-7123-macos-clang-arm64.dmg"
   name "Okular"
   desc "The Universal Document Viewer"
   homepage "https://okular.kde.org/"

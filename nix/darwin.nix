@@ -37,7 +37,7 @@ in {
   nix.settings.trusted-users = [ "root" "@admin" ];
 
   # Replace nix with lix.
-  nix.package = pkgs.lix;
+  nix.package = pkgs.lixPackageSets.stable.lix;
 
   # Eliminate warnings of "Nix search path entry does not exist".
   nix.channel.enable = false;
