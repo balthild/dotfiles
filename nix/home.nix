@@ -38,9 +38,8 @@
 
     # Dev (language-specific)
     rustup
-    # https://github.com/NixOS/nixpkgs/issues/482918
-    nodejs_24
-    corepack_24
+    nodejs
+    yarn-switch
     go
     delve
     uv
