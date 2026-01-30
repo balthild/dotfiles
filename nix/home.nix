@@ -38,8 +38,8 @@
 
     # Dev (language-specific)
     rustup
-    nodejs
-    yarn-switch
+    nodejs_24
+    corepack_24
     go
     delve
     uv
