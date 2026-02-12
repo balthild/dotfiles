@@ -73,4 +73,5 @@ in {
 
   # Other.
   system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
+  system.defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
 }
