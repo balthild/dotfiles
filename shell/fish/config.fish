@@ -23,13 +23,25 @@ function cask
 end
 
 function wuwa-gacha-records
-  set path '~/Library/Containers/com.kurogame.mingchao/Data/Library/Logs/Client/Client.log'
+  set path ~/Library/Containers/com.kurogame.mingchao/Data/Library/Logs/Client/Client.log
   set pattern 'https://aki-gm-resources(-oversea)?.aki-game.(net|com)[^"]*'
   set url (grep -oE $pattern $path | tail -n 1)
   if [ -n "$url" ]
     echo $url
   else
     echo "URL not found in game log" >&2
+    return 1
+  end
+end
+
+function genshin-gacha-records
+  set path ~/Library/Containers/com.miHoYo.Yuanshen/Data/Library/Caches/WebKit/NetworkCache
+  set pattern 'https://webstatic.mihoyo.com/hk4e/.*gacha.*/.*authkey='
+  set url (rg --text --max-count 1 $pattern $path | strings | rg $pattern | tail -n 1)
+  if [ -n "$url" ]
+    echo $url
+  else
+    echo "URL not found in game cache" >&2
     return 1
   end
 end
