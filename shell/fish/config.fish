@@ -36,8 +36,20 @@ end
 
 function genshin-gacha-records
   set path ~/Library/Containers/com.miHoYo.Yuanshen/Data/Library/Caches/WebKit/NetworkCache
-  set pattern 'https://webstatic.mihoyo.com/hk4e/.*gacha.*/.*authkey='
+  set pattern 'https://webstatic.mihoyo.com/hk4e/.*gacha.*/.*authkey=.*/log'
   set url (rg --text --max-count 1 $pattern $path | strings | rg $pattern | tail -n 1)
+  if [ -n "$url" ]
+    echo $url
+  else
+    echo "URL not found in game cache" >&2
+    return 1
+  end
+end
+
+function zzz-gacha-records
+  set path ~/Library/Containers/com.miHoYo.Nap/Data/Library/Caches/com.miHoYo.Nap/Cache.db
+  set pattern 'https://webstatic.mihoyo.com/nap/*gacha*/*authkey=*'
+  set url (sqlite3 $path "SELECT request_key FROM cfurl_cache_response WHERE request_key GLOB '$pattern' LIMIT 1;")
   if [ -n "$url" ]
     echo $url
   else
