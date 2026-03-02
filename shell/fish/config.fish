@@ -49,7 +49,19 @@ end
 function zzz-gacha-records
   set path ~/Library/Containers/com.miHoYo.Nap/Data/Library/Caches/com.miHoYo.Nap/Cache.db
   set pattern 'https://webstatic.mihoyo.com/nap/*gacha*/*authkey=*'
-  set url (sqlite3 $path "SELECT request_key FROM cfurl_cache_response WHERE request_key GLOB '$pattern' LIMIT 1;")
+  set url (sqlite3 $path "SELECT request_key FROM cfurl_cache_response WHERE request_key GLOB '$pattern' ORDER BY time_stamp DESC LIMIT 1;")
+  if [ -n "$url" ]
+    echo $url
+  else
+    echo "URL not found in game cache" >&2
+    return 1
+  end
+end
+
+function re1999-gacha-records
+  set path ~/Library/Containers/DA9CE673-8D54-46DD-BAB2-17D48D49B06F/Data/Library/Caches/com.bluepoch.m.reverse1999/Cache.db
+  set pattern 'https://game-re-service.sl916.com/query/summon?userId=*'
+  set url (sqlite3 $path "SELECT request_key FROM cfurl_cache_response WHERE request_key GLOB '$pattern' ORDER BY time_stamp DESC LIMIT 1;")
   if [ -n "$url" ]
     echo $url
   else

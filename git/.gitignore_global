@@ -10,5 +10,6 @@
 .DS_*
 
 *_ignored.*
+_ignored
 .ccls-cache/
 .cache/clangd/
