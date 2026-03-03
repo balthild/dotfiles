@@ -59,6 +59,10 @@ patch:
       states: [☠️, 😀]
       reset: 1
 
+  editor:
+    bindings:
+      Shift+BackSpace: delete_candidate
+
 bindings:
   __append:
     # - { when: always, accept: Shift+space, toggle: full_shape }
