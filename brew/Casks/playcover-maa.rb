@@ -1,11 +1,10 @@
-cask "playcover-community@nightly" do
-  name "PlayCover"
+cask "playcover-maa" do
+  name "PlayCover MAA"
   desc "Sideload iOS apps and games"
-  homepage "https://github.com/PlayCover/PlayCover"
+  homepage "https://github.com/hguandl/PlayCover"
 
-  # https://nightly.link/playcover/playcover/workflows/2.nightly_release/develop?status=completed
-  version "1407"
-  url "https://nightly.link/PlayCover/PlayCover/workflows/2.nightly_release/develop/PlayCover_nightly_#{version}.dmg.zip"
+  version "v3.1.0.maa.3"
+  url "https://github.com/hguandl/PlayCover/releases/download/#{version}/PlayCover-#{version}.dmg"
 
   conflicts_with cask: ["playcover-community", "playcover-community@beta"]
   depends_on arch: :arm64
