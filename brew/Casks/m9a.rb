@@ -21,21 +21,20 @@ cask "m9a" do
       ]
 
     FileUtils.mkdir_p "#{staged_path}/M9A.iconset"
-    for size in [16, 32, 64, 128, 256, 512]
+    [16, 32, 64, 128, 256, 512].each do |size|
+      out_1x = "#{staged_path}/M9A.iconset/icon_#{size}x#{size}.png"
+      out_2x = "#{staged_path}/M9A.iconset/icon_#{size/2}x#{size/2}@2x.png"
+
       system_command "sips",
         args: [
           "-z", size.to_s, size.to_s,
-          "--out", "#{staged_path}/M9A.iconset/icon_#{size}x#{size}.png",
+          "--out", out_1x,
           "#{staged_path}/M9A.png",
         ]
-    end
-    for size in [32, 64, 128, 256, 512]
-      system_command "sips",
-        args: [
-          "-z", size.to_s, size.to_s,
-          "--out", "#{staged_path}/M9A.iconset/icon_#{size/2}x#{size/2}@2x.png",
-          "#{staged_path}/M9A.png",
-        ]
+
+      if size >= 32
+        FileUtils.cp out_1x, out_2x
+      end
     end
 
     FileUtils.mkdir_p "#{staged_path}/M9A.app/Contents/MacOS"
@@ -44,8 +43,8 @@ cask "m9a" do
     system_command "iconutil",
       args: [
         "-c", "icns",
+        "-o", "#{staged_path}/M9A.app/Contents/Resources/M9A.icns",
         "#{staged_path}/M9A.iconset",
-        "-o", "#{staged_path}/M9A.app/Contents/Resources/M9A.icns"
       ]
 
     (staged_path/"M9A.app/Contents/Info.plist").write <<~XML

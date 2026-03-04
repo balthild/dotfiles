@@ -1,6 +1,6 @@
 cask "playcover-maa" do
   name "PlayCover MAA"
-  desc "Sideload iOS apps and games"
+  desc "A fork of PlayCover with MAA support"
   homepage "https://github.com/hguandl/PlayCover"
 
   version "v3.1.0.maa.3"
