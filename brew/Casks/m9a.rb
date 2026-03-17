@@ -59,7 +59,7 @@ cask "m9a" do
         <key>CFBundleIdentifier</key>
         <string>io.github.balthild.m9a-stub</string>
         <key>CFBundleVersion</key>
-        <string>1.0.0</string>
+        <string>#{version}</string>
         <key>CFBundleExecutable</key>
         <string>M9A</string>
         <key>CFBundleIconFile</key>

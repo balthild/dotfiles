@@ -19,6 +19,7 @@ min-width = 1
 [keys.normal]
 "Meta-up" = "goto_prev_paragraph"
 "Meta-down" = "goto_next_paragraph"
+"Meta-/" = "toggle_comments"
 
 [keys.select]
 "Meta-up" = "goto_prev_paragraph"
