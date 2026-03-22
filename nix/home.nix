@@ -24,6 +24,8 @@
 
     # Generic
     nix-search-cli
+    nix-diff
+    nix-tree
     hyfetch
     fastfetch
     dotter
@@ -51,6 +53,7 @@
 
     # Dev (generic)
     devenv
+    lima
     colima
     docker
     dprint

@@ -1,0 +1,20 @@
+vmType: vz
+cpus: 6
+memory: 8GiB
+disk: 100GiB
+
+images:
+  - location: https://repo.aosc.io/misc/aosc-os_base_rawimg_virt_cloud-generic-amd64_20260217_amd64.qcow2
+    arch: aarch64
+    digest: sha256:79942ebcf6fe88c4b328f81ac55d35e74f0636332533bdd3c1f8cf6c0ad49567
+
+mounts:
+  - location: "~/Projects"
+
+  - location: "{{.GlobalTempDir}}/lima"
+    mountPoint: /tmp/lima
+    writable: true
+
+containerd:
+  system: false
+  user: false

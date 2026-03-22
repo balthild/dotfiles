@@ -15,57 +15,6 @@ alias grep 'grep --color'
 abbr -a ll 'ls -l'
 abbr -a la 'ls -la'
 
-abbr -a nix-apply 'sudo darwin-rebuild switch --flake ~/.dotfiles/nix'
-abbr -a nix-locate 'nix run github:nix-community/nix-index-database'
-
-function cask
+function cask -w 'brew'
   brew $argv[1] --cask $argv[2..]
-end
-
-function wuwa-gacha-records
-  set path ~/Library/Containers/com.kurogame.mingchao/Data/Library/Logs/Client/Client.log
-  set pattern 'https://aki-gm-resources(-oversea)?.aki-game.(net|com)[^"]*'
-  set url (grep -oE $pattern $path | tail -n 1)
-  if [ -n "$url" ]
-    echo $url
-  else
-    echo "URL not found in game log" >&2
-    return 1
-  end
-end
-
-function genshin-gacha-records
-  set path ~/Library/Containers/com.miHoYo.Yuanshen/Data/Library/Caches/WebKit/NetworkCache
-  set pattern 'https://webstatic.mihoyo.com/hk4e/.*gacha.*/.*authkey=.*/log'
-  set url (rg --text --max-count 1 $pattern $path | strings | rg $pattern | tail -n 1)
-  if [ -n "$url" ]
-    echo $url
-  else
-    echo "URL not found in game cache" >&2
-    return 1
-  end
-end
-
-function zzz-gacha-records
-  set path ~/Library/Containers/com.miHoYo.Nap/Data/Library/Caches/com.miHoYo.Nap/Cache.db
-  set pattern 'https://webstatic.mihoyo.com/nap/*gacha*/*authkey=*'
-  set url (sqlite3 $path "SELECT request_key FROM cfurl_cache_response WHERE request_key GLOB '$pattern' ORDER BY time_stamp DESC LIMIT 1;")
-  if [ -n "$url" ]
-    echo $url
-  else
-    echo "URL not found in game cache" >&2
-    return 1
-  end
-end
-
-function re1999-gacha-records
-  set path ~/Library/Containers/DA9CE673-8D54-46DD-BAB2-17D48D49B06F/Data/Library/Caches/com.bluepoch.m.reverse1999/Cache.db
-  set pattern 'https://game-re-service.sl916.com/query/summon?userId=*'
-  set url (sqlite3 $path "SELECT request_key FROM cfurl_cache_response WHERE request_key GLOB '$pattern' ORDER BY time_stamp DESC LIMIT 1;")
-  if [ -n "$url" ]
-    echo $url
-  else
-    echo "URL not found in game cache" >&2
-    return 1
-  end
 end
