@@ -3,4 +3,4 @@ name: limactl
 description: Linux virtual machines, with a focus on running containers
 parsing: disabled
 completion:
-  positionalany: ["$carapace.bridge.Cobra([limactl])"]
+  positionalany: [ "$carapace.bridge.Cobra([limactl])" ]

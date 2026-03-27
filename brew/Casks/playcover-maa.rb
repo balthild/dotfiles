@@ -3,8 +3,8 @@ cask "playcover-maa" do
   desc "A fork of PlayCover with MAA support"
   homepage "https://github.com/hguandl/PlayCover"
 
-  version "v3.1.0.maa.3"
-  url "https://github.com/hguandl/PlayCover/releases/download/#{version}/PlayCover-#{version}.dmg"
+  version "3.1.0.maa.3"
+  url "https://github.com/hguandl/PlayCover/releases/download/v#{version}/PlayCover-v#{version}.dmg"
 
   conflicts_with cask: ["playcover-community", "playcover-community@beta"]
   depends_on arch: :arm64

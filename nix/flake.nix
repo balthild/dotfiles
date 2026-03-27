@@ -15,11 +15,7 @@
       "Balthild-Mac" = nix-darwin.lib.darwinSystem {
         modules = [
           ./darwin.nix
-          home-manager.darwinModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users."balthild" = import ./home.nix;
-          }
+          home-manager.darwinModules.home-manager
         ];
         specialArgs = { inherit inputs; };
       };

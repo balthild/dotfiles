@@ -33,6 +33,11 @@ in {
     home = "/Users/balthild";
   };
 
+  # Configure home-manager.
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users."balthild" = import ./home.nix;
+
   # Grant privileges of accessing the nix-daemon.
   nix.settings.trusted-users = [ "root" "@admin" ];
 
