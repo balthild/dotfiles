@@ -35,7 +35,7 @@ function zzz-gacha-records
 end
 
 function re1999-gacha-records
-  set -l path ~/Library/Containers/DA9CE673-8D54-46DD-BAB2-17D48D49B06F/Data/Library/Caches/com.bluepoch.m.reverse1999/Cache.db
+  set -l path ~/Library/Containers/com.bluepoch.m.reverse1999/Data/Library/Caches/com.bluepoch.m.reverse1999/Cache.db
   set -l pattern 'https://game-re-service.sl916.com/query/summon?userId=*'
   set -l url (sqlite3 $path "SELECT request_key FROM cfurl_cache_response WHERE request_key GLOB '$pattern' ORDER BY time_stamp DESC LIMIT 1;")
   if [ -n "$url" ]
