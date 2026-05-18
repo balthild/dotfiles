@@ -53,6 +53,7 @@
 
     # Dev (generic)
     devenv
+    lima
     colima
     docker
     dprint
