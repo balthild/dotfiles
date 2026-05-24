@@ -13,7 +13,11 @@ end
 function genshin-gacha-records
   set -l path ~/Library/Containers/com.miHoYo.Yuanshen/Data/Library/Caches/WebKit/NetworkCache
   set -l pattern 'https://webstatic.mihoyo.com/hk4e/.*gacha.*/.*authkey=.*/log'
-  set -l url (rg --text --max-count 1 $pattern $path | strings | rg $pattern | tail -n 1)
+
+  set -l caches (rg -l --text $pattern $path)
+  set -l latest (ls -td -- $caches | head -n 1)
+  set -l url (strings $latest | rg $pattern | head -n 1)
+
   if [ -n "$url" ]
     echo $url
   else
