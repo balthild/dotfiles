@@ -7,7 +7,7 @@ cask "m9a" do
   url "https://httpbin.org/status/200"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
   depends_on formula: "m9a"
 
   app "M9A.app"

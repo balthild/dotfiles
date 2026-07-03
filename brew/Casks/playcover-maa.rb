@@ -8,7 +8,7 @@ cask "playcover-maa" do
 
   conflicts_with cask: ["playcover-community", "playcover-community@beta"]
   depends_on arch: :arm64
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "PlayCover.app"
 

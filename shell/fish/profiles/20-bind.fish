@@ -8,3 +8,4 @@ bind tab '
 '
 
 bind super-r 'history-pager'
+bind super-shift-delete 'history-delete'

@@ -6,7 +6,7 @@ cask "okular-droplet" do
   version "1.0.0"
   url "https://httpbin.org/status/200"
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
   depends_on arch: :arm64
   depends_on cask: "okular"
 

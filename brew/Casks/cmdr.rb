@@ -7,7 +7,7 @@ cask "cmdr" do
   url "https://github.com/vdavid/cmdr/releases/download/v#{version}/Cmdr_#{version}_aarch64.dmg"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Cmdr.app"
 end
