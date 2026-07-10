@@ -1,7 +1,23 @@
 function wuwa-gacha-records
+  set -l decode '
+    BEGIN {
+      binmode STDIN;
+      binmode STDOUT;
+    }
+
+    while (read(STDIN, my $ch, 1)) {
+      my $code = ord($ch);
+      if ($code & 1) {
+        print chr($code ^ 0xA5);
+      } else {
+        print chr($code ^ 0xEF);
+      }
+    }
+  '
+
   set -l path ~/Library/Containers/com.kurogame.mingchao/Data/Library/Logs/Client/Client.log
   set -l pattern 'https://aki-gm-resources(-oversea)?.aki-game.(net|com)[^"]*'
-  set -l url (grep -oE $pattern $path | tail -n 1)
+  set -l url (cat $path | perl -e "$decode" | grep -oE $pattern | tail -n 1)
   if [ -n "$url" ]
     echo $url
   else
