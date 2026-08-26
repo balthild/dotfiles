@@ -42,6 +42,22 @@ function genshin-gacha-records
   end
 end
 
+function hsr-gacha-records
+  set -l path ~/Library/Containers/com.miHoYo.hkrpg/Data/Library/Caches/WebKit/NetworkCache
+  set -l pattern 'https://webstatic.mihoyo.com/hkrpg/.*gacha.*/.*authkey=.*game_biz=hkrpg_cn'
+
+  set -l caches (rg -l --text $pattern $path)
+  set -l latest (ls -td -- $caches | head -n 1)
+  set -l url (strings $latest | rg $pattern | head -n 1)
+
+  if [ -n "$url" ]
+    echo $url
+  else
+    echo "URL not found in game cache" >&2
+    return 1
+  end
+end
+
 function zzz-gacha-records
   set -l path ~/Library/Containers/com.miHoYo.Nap/Data/Library/Caches/com.miHoYo.Nap/Cache.db
   set -l pattern 'https://webstatic.mihoyo.com/nap/*gacha*/*authkey=*'
