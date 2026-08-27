@@ -12,7 +12,7 @@ stdenv.mkDerivation rec {
     fetchSubmodules = true;
     gitConfigFile = lib.toFile "gitconfig" ''
       [url "https://github.com/"]
-        insteadOf = "git@github.com:";
+        insteadOf = "git@github.com:"
     '';
   };
 
