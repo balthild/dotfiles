@@ -42,12 +42,13 @@
     rustup
     nodejs_24
     corepack_24
-    go
+    go_latest
     delve
     uv
     clang
     clang-tools
     typst
+    nil
     nixd
     nixfmt
 
