@@ -43,7 +43,8 @@ function genshin-gacha-records
 end
 
 function hsr-gacha-records
-  set -l path ~/Library/Containers/com.miHoYo.hkrpg/Data/Library/Caches/WebKit/NetworkCache
+  # set -l path ~/Library/Containers/com.miHoYo.hkrpg/Data/Library/Caches/WebKit/NetworkCache
+  set -l path ~/Yaagl/HSR/StarRail_Data/webCaches
   set -l pattern 'https://webstatic.mihoyo.com/hkrpg/.*gacha.*/.*authkey=.*game_biz=hkrpg_cn'
 
   set -l caches (rg -l --text $pattern $path)
