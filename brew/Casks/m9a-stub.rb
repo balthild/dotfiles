@@ -1,4 +1,4 @@
-cask "m9a" do
+cask "m9a-stub" do
   name "M9A"
   desc "Assistant For Reverse: 1999"
   homepage "https://github.com/MAA1999/M9A"
