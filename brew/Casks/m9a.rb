@@ -12,42 +12,40 @@ cask "m9a" do
 
   app "M9A.app"
 
-  preflight do
-    system_command "curl",
-      args: [
-        "--silent",
-        "-o", "#{staged_path}/M9A.png",
-        "https://raw.githubusercontent.com/MAA1999/M9A/refs/heads/main/assets/logo.png",
+  preflight_steps do
+    run "curl", network_access: true, args: [
+      "--fail",
+      "--silent",
+      "-o", "{{staged_path}}/M9A.png",
+      "https://raw.githubusercontent.com/MAA1999/M9A/refs/tags/v4.0.0/assets/logo.png",
+    ]
+
+    mkdir_p "{{staged_path}}/M9A.iconset"
+    [16, 32, 64, 128, 256, 512].each do |size|
+      out_1x = "{{staged_path}}/M9A.iconset/icon_#{size}x#{size}.png"
+      out_2x = "{{staged_path}}/M9A.iconset/icon_#{size/2}x#{size/2}@2x.png"
+
+      run "sips", args: [
+        "-z", size.to_s, size.to_s,
+        "--out", out_1x,
+        "{{staged_path}}/M9A.png",
       ]
 
-    FileUtils.mkdir_p "#{staged_path}/M9A.iconset"
-    [16, 32, 64, 128, 256, 512].each do |size|
-      out_1x = "#{staged_path}/M9A.iconset/icon_#{size}x#{size}.png"
-      out_2x = "#{staged_path}/M9A.iconset/icon_#{size/2}x#{size/2}@2x.png"
-
-      system_command "sips",
-        args: [
-          "-z", size.to_s, size.to_s,
-          "--out", out_1x,
-          "#{staged_path}/M9A.png",
-        ]
-
       if size >= 32
-        FileUtils.cp out_1x, out_2x
+        copy out_1x, out_2x
       end
     end
 
-    FileUtils.mkdir_p "#{staged_path}/M9A.app/Contents/MacOS"
-    FileUtils.mkdir_p "#{staged_path}/M9A.app/Contents/Resources"
-    FileUtils.ln_s Formula["m9a"].libexec/"M9A", "#{staged_path}/M9A.app/Contents/MacOS/M9A"
-    system_command "iconutil",
-      args: [
-        "-c", "icns",
-        "-o", "#{staged_path}/M9A.app/Contents/Resources/M9A.icns",
-        "#{staged_path}/M9A.iconset",
-      ]
+    mkdir_p "{{staged_path}}/M9A.app/Contents/MacOS"
+    mkdir_p "{{staged_path}}/M9A.app/Contents/Resources"
+    symlink Formula["m9a"].libexec/"M9A", "{{staged_path}}/M9A.app/Contents/MacOS/M9A"
+    run "iconutil", args: [
+      "-c", "icns",
+      "-o", "{{staged_path}}/M9A.app/Contents/Resources/M9A.icns",
+      "{{staged_path}}/M9A.iconset",
+    ]
 
-    (staged_path/"M9A.app/Contents/Info.plist").write <<~XML
+    write_file "{{staged_path}}/M9A.app/Contents/Info.plist", <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
       <plist version="1.0">
@@ -59,7 +57,7 @@ cask "m9a" do
         <key>CFBundleIdentifier</key>
         <string>io.github.balthild.m9a-stub</string>
         <key>CFBundleVersion</key>
-        <string>#{version}</string>
+        <string>{{version}}</string>
         <key>CFBundleExecutable</key>
         <string>M9A</string>
         <key>CFBundleIconFile</key>

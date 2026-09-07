@@ -12,43 +12,40 @@ cask "okular-droplet" do
 
   app "okular_droplet.app"
 
-  preflight do
-    staged_path.mkpath
+  preflight_steps do
+    mkdir_p "{{staged_path}}"
 
-    system_command "/usr/bin/osacompile",
-      args: [
-        "-o", "#{staged_path}/okular_droplet.app",
-        "-e",
-        <<~APPLESCRIPT
-          on open droppedFiles
-            repeat with f in droppedFiles
-              set filePath to POSIX path of f
-              set quotedPath to quoted form of filePath
-              do shell script "#{appdir}/okular.app/Contents/MacOS/okular " & quotedPath & " >/dev/null 2>&1 &"
-            end repeat
-          end open
-        APPLESCRIPT
-      ]
+    run "/usr/bin/osacompile", args: [
+      "-o", "{{staged_path}}/okular_droplet.app",
+      "-e",
+      <<~APPLESCRIPT
+        on open droppedFiles
+          repeat with f in droppedFiles
+            set filePath to POSIX path of f
+            set quotedPath to quoted form of filePath
+            do shell script "{{appdir}}/okular.app/Contents/MacOS/okular " & quotedPath & " >/dev/null 2>&1 &"
+          end repeat
+        end open
+      APPLESCRIPT
+    ]
 
-    system_command "/usr/libexec/PlistBuddy",
-      args: [
-        "-c", "Add :CFBundleIdentifier string 'com.apple.ScriptEditor.id.okular_droplet'",
-        "-c", "Delete :CFBundleDocumentTypes:0",
-        "-c", "Add :CFBundleDocumentTypes:0 dict",
-        "-c", "Add :CFBundleDocumentTypes:0:CFBundleTypeName string 'PDF'",
-        "-c", "Add :CFBundleDocumentTypes:0:CFBundleTypeRole string 'Viewer'",
-        "-c", "Add :CFBundleDocumentTypes:0:LSItemContentTypes array",
-        "-c", "Add :CFBundleDocumentTypes:0:LSItemContentTypes:0 string 'com.adobe.pdf'",
-        "#{staged_path}/okular_droplet.app/Contents/Info.plist"
-      ]
+    run "/usr/libexec/PlistBuddy", args: [
+      "-c", "Add :CFBundleIdentifier string 'com.apple.ScriptEditor.id.okular_droplet'",
+      "-c", "Delete :CFBundleDocumentTypes:0",
+      "-c", "Add :CFBundleDocumentTypes:0 dict",
+      "-c", "Add :CFBundleDocumentTypes:0:CFBundleTypeName string 'PDF'",
+      "-c", "Add :CFBundleDocumentTypes:0:CFBundleTypeRole string 'Viewer'",
+      "-c", "Add :CFBundleDocumentTypes:0:LSItemContentTypes array",
+      "-c", "Add :CFBundleDocumentTypes:0:LSItemContentTypes:0 string 'com.adobe.pdf'",
+      "{{staged_path}}/okular_droplet.app/Contents/Info.plist"
+    ]
 
-    system_command "/usr/bin/codesign",
-      args: [
-        "--force",
-        "--sign",
-        "-",
-        "--timestamp=none",
-        "#{staged_path}/okular_droplet.app"
-      ]
+    run "/usr/bin/codesign", args: [
+      "--force",
+      "--sign",
+      "-",
+      "--timestamp=none",
+      "{{staged_path}}/okular_droplet.app"
+    ]
   end
 end
