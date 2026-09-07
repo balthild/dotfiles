@@ -56,11 +56,11 @@ Deploy:
 dotter deploy
 ```
 
-## Packages
+## Remarks
 
 ### Nix
 
-Requires [nix-darwin](https://github.com/LnL7/nix-darwin).
+- [nix-darwin](https://github.com/LnL7/nix-darwin)
 
 First-time installation:
 
@@ -68,11 +68,19 @@ First-time installation:
 nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/.dotfiles/nix
 ```
 
+Check for changes:
+
+```shell
+darwin-rebuild build --dry-run --flake ~/.dotfiles/nix
+# or the shell alias
+nix-plan
+```
+
 Apply changes:
 
 ```shell
 darwin-rebuild -- switch --flake ~/.dotfiles/nix
-# or the shell alias (fish/elvish/nushell)
+# or the shell alias
 nix-apply
 ```
 
@@ -84,11 +92,13 @@ nix-search neovim
 
 ### WSL
 
-[ArchWSL](https://github.com/yuk7/ArchWSL)
+- [ArchWSL](https://github.com/yuk7/ArchWSL)
 
 ### Shell
 
-Requires [elvish](https://github.com/elves/elvish), [starship](https://github.com/starship/starship), and [carapace](https://github.com/rsteube/carapace-bin).
+- [elvish](https://github.com/elves/elvish)
+- [starship](https://github.com/starship/starship)
+- [carapace](https://github.com/rsteube/carapace-bin)
 
 ```shell
 # Windows
@@ -97,7 +107,10 @@ scoop install elvish starship carapace-bin
 
 ### Rime
 
-Requires [rime-ice](https://github.com/iDvel/rime-ice).
+- [雾凇拼音](https://github.com/iDvel/rime-ice)
+- [万象语法模型](https://github.com/amzxyz/RIME-LMDG)
+
+Install the schema:
 
 ```shell
 # Install with Rimeka
@@ -112,4 +125,10 @@ Weasel 0.11+ has plum (rime-install) out of the box, located at ｢输入法设�
 ```shell
 cd ~/AppData/Roaming/plum
 ./rime-install iDvel/rime-ice:others/recipes/full
+```
+
+Install the model:
+
+```shell
+wget -O ~/Library/Rime/wanxiang-lts-zh-hans.gram https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram
 ```
