@@ -3,7 +3,6 @@ depends = [
   "git",
   "shell",
   "helix",
-  "nvim",
   "rime",
   "copilot",
   "wsl",
@@ -19,9 +18,6 @@ depends = [
 
 [helix.files]
 "helix" = "~/AppData/Roaming/helix/"
-
-[nvim.files]
-"nvim" = "~/AppData/Local/nvim/"
 
 [rime.files]
 "rime" = "~/AppData/Roaming/Rime"

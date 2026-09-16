@@ -3,7 +3,6 @@ depends = [
   "git",
   "shell",
   "helix",
-  "nvim",
   "rime",
   "copilot",
   "nix",

@@ -87,7 +87,7 @@ nix-apply
 Search packages:
 
 ```shell
-nix-search neovim
+nix-search helix
 ```
 
 ### WSL

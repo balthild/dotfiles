@@ -13,9 +13,6 @@ default_target_type = "symbolic"
 [helix.files]
 "helix" = "~/.config/helix/"
 
-[nvim.files]
-"nvim" = "~/.config/nvim/"
-
 [copilot.files]
 "copilot" = "~/.copilot"
 
