@@ -5,6 +5,7 @@ depends = [
     "helix",
     "nvim",
     "rime",
+    "copilot",
     "nix",
     "misc",
     "secret",

@@ -16,6 +16,9 @@ default_target_type = "symbolic"
 [nvim.files]
 "nvim" = "~/.config/nvim/"
 
+[copilot.files]
+"copilot" = "~/.copilot"
+
 [misc.files]
 "misc/fastfetch.jsonc" = "~/.config/fastfetch/config.jsonc"
 
