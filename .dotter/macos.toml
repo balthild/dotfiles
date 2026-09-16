@@ -1,15 +1,15 @@
 [default]
 depends = [
-    "git",
-    "shell",
-    "helix",
-    "nvim",
-    "rime",
-    "copilot",
-    "nix",
-    "misc",
-    "secret",
-    "brew",
+  "git",
+  "shell",
+  "helix",
+  "nvim",
+  "rime",
+  "copilot",
+  "nix",
+  "misc",
+  "secret",
+  "brew",
 ]
 
 [shell.files]

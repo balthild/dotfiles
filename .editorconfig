@@ -6,14 +6,14 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[README.md]
+[*.md]
 indent_style = space
 indent_size = 2
 
-[**.{nix,fish,elv,nu,lua,json,yaml,rb,pl}]
+[**.{nix,fish,elv,nu,lua,css,toml,json,yaml,rb,pl}]
 indent_style = space
 indent_size = 2
 
-[**.toml]
-indent_style = space
-indent_size = 4
+[.gitconfig]
+indent_style = tab
+indent_size = 2

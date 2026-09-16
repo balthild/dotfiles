@@ -43,12 +43,12 @@ exit 0 if $? == 0;
 $diagnosis =~ s/^\s+|\s+$//g;
 
 print $json->encode({
-	hookSpecificOutput => {
-		hookEventName            => 'PreToolUse',
-		permissionDecision       => 'deny',
-		permissionDecisionReason => "Not valid fish syntax:\n$diagnosis",
-		additionalContext        => 'The terminal runs fish, not bash. Rewrite the command in fish syntax and call runInTerminal again.',
-	},
+  hookSpecificOutput => {
+    hookEventName            => 'PreToolUse',
+    permissionDecision       => 'deny',
+    permissionDecisionReason => "Not valid fish syntax:\n$diagnosis",
+    additionalContext        => 'The terminal runs fish, not bash. Rewrite the command in fish syntax and call runInTerminal again.',
+  },
 });
 
 exit 0;

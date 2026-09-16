@@ -1,11 +1,11 @@
 {
-	"hooks": {
-		"PreToolUse": [
-			{
-				"type": "command",
-				"command": "perl $HOME/.dotfiles/copilot/hooks/fish-shell.pl",
-				"timeout": 5
-			}
-		]
-	}
+  "hooks": {
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "perl ~/.dotfiles/copilot/hooks/fish-shell.pl",
+        "timeout": 5
+      }
+    ]
+  }
 }
