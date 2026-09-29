@@ -7,12 +7,14 @@
 !.vscode/.gitignore
 !.vscode/extensions.json
 
+*.code-workspace
+
 *~
 .DS_*
 
+*_ignored
 *_ignored.*
-_ignored_*.*
-_ignored
+_ignored_*
 
 .ccls-cache/
 .cache/clangd/

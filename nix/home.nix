@@ -42,6 +42,7 @@
     rustup
     nodejs_24
     corepack_24
+    bun
     go_latest
     delve
     uv
