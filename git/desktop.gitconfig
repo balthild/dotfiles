@@ -1,0 +1,8 @@
+[include]
+    path = ~/.dotfiles/git/common.gitconfig
+[credential]
+	helper = manager
+[credential "helperselector"]
+	selected = manager
+[credential "https://github.com"]
+	username = balthild

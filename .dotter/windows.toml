@@ -12,6 +12,9 @@ depends = [ #
   "secret",
 ]
 
+[git.files]
+"git/desktop.gitconfig" = "~/.gitconfig"
+
 [shell.files]
 "shell/elvish" = "~/AppData/Roaming/elvish/"
 "shell/nushell" = "~/AppData/Roaming/nushell/"

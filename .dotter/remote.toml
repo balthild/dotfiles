@@ -6,3 +6,6 @@ depends = [ #
   "copilot",
   "misc",
 ]
+
+[git.files]
+"git/common.gitconfig" = "~/.gitconfig"

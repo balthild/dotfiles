@@ -11,6 +11,9 @@ depends = [ #
   "brew",
 ]
 
+[git.files]
+"git/desktop.gitconfig" = "~/.gitconfig"
+
 [shell.files]
 "shell/carapace" = "~/Library/Application Support/carapace/"
 "shell/ghostty.conf" = "~/Library/Application Support/com.mitchellh.ghostty/config"

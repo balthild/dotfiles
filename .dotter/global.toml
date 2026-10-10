@@ -2,7 +2,7 @@
 default_target_type = "symbolic"
 
 [git.files]
-"git" = "~"
+"git/.gitignore_global" = "~/.gitignore_global"
 
 [shell.files]
 "shell/fish" = "~/.config/fish/"
