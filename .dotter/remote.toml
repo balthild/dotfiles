@@ -1,0 +1,8 @@
+[default]
+depends = [ #
+  "git",
+  "shell",
+  "helix",
+  "copilot",
+  "misc",
+]
