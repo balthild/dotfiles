@@ -1,3 +1,7 @@
+if not command -q nix
+  return 0
+end
+
 abbr -a nix-apply 'sudo darwin-rebuild switch --flake ~/.dotfiles/nix'
 abbr -a nix-plan 'darwin-rebuild build --dry-run --flake ~/.dotfiles/nix'
 abbr -a nix-browse 'nix-tree --derivation ~/.dotfiles/nix#darwinConfigurations.Balthild-Mac.system'
