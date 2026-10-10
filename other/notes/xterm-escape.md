@@ -40,17 +40,17 @@ For example, `<CSI>1;3C` is <kbd>Alt+Right</kbd> (the `1` is a dummy parameter),
 
 Format: `<CSI>27;<Int>;<Int>~`
 
-These sequences are used for some special keys like `Tab` or `Space` with modifiers. The format are consistent with VT function key sequences. The first parameter is always `27` - a code that is not used by existing VT sequences. The second parameter is the encoded modifiers, and the third parameter is the ASCII code of the key.
+These sequences are used for some special keys like `Tab` or `Space` with modifiers. The format are consistent with VT function key sequences. The first integer is always `27` - a code that is not used by existing VT sequences. The second and the third integers are parameters. The first parameter is encoded modifiers, and the second parameter is the ASCII code of the key.
 
 ### CSI-u
 
 Format: `<CSI><Int>;<Int>u`
 
-Similar to CSI-27, but looks like cursor control sequences and supports Unicode. The first parameter is the Unicode codepoint and the second parameter is the encoded modifiers.
+Serves similar purpose as CSI-27, with Unicode support. The format looks like cursor control sequences (`<Fn>` being `u`) but is actually not. The first parameter is the Unicode codepoint and the second parameter is the encoded modifiers.
 
 ## Modifiers
 
-Modifiers are encoded into a single integer as `sum(...modifiers) + 1`. The default value is `1` (no modifiers).
+Modifiers are encoded into a single integer as `sum(...modifiers) + 1`. That is, `1` means no modifiers.
 
 | Modifier | Value |
 | -------- | ----- |

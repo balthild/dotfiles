@@ -18,6 +18,8 @@ default_target_type = "symbolic"
 
 [misc.files]
 "misc/fastfetch.jsonc" = "~/.config/fastfetch/config.jsonc"
+"misc/cargo-config.toml" = "~/.cargo/config.toml"
+"misc/kache-config.toml" = "~/.config/kache/config.toml"
 
 [secret.files]
 "secret/ssh-config" = "~/.ssh/config"

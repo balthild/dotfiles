@@ -21,8 +21,5 @@ depends = [
 "rime" = "~/Library/Rime/"
 "rime/options.macos.yaml" = "~/Library/Rime/options.platform.yaml"
 
-[misc.files]
-"misc/.pycodestyle" = "~/.config/pycodestyle"
-
 [brew.files]
 "brew" = "/opt/homebrew/Library/Taps/balthild/homebrew-dotfiles"

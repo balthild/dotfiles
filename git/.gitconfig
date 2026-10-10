@@ -13,6 +13,8 @@
 	helper = manager
 [credential "helperselector"]
 	selected = manager
+[credential "https://github.com"]
+	username = balthild
 [pull]
 	rebase = false
 [filter "lfs"]
