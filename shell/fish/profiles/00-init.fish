@@ -1,4 +1,4 @@
-if command -q nix
+if test -x /run/current-system/sw/bin/nix
   # Nix have their environment variables set for zsh
   for line in (sudo -u $USER -i zsh -c 'env' | grep -v -E '^(SUDO_.*|_|PWD|OLDPWD|SHLVL)=')
     set item (string split -m 1 '=' $line)
@@ -10,7 +10,7 @@ else
   fish_add_path -g --move --prepend --path ~/.local/bin ~/.cargo/bin
 end
 
-if test -d /opt/homebrew/bin
+if test -x /opt/homebrew/bin/brew
   eval $(/opt/homebrew/bin/brew shellenv)
   set -gx HOMEBREW_NO_ENV_HINTS true
   # Make it lowest priority in paths
