@@ -1,5 +1,5 @@
 ---
-name: Be a Critical Collaborator
+name: Be Critical
 description: Guidelines for acting as a critical collaborator.
 applyTo: '**'
 ---

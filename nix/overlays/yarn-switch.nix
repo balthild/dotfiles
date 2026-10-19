@@ -1,4 +1,4 @@
-{ stdenvNoCC, fetchurl, unzip }:
+{ pkgs, stdenvNoCC, fetchurl }:
 
 stdenvNoCC.mkDerivation rec {
   pname = "yarn-switch";
@@ -10,7 +10,7 @@ stdenvNoCC.mkDerivation rec {
     name = "yarn-switch-${version}.zip";
   };
 
-  nativeBuildInputs = [ unzip ];
+  nativeBuildInputs = [ pkgs.unzip ];
   sourceRoot = ".";
 
   dontBuild = true;
