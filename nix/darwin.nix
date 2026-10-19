@@ -22,6 +22,7 @@ in {
     git
     git-credential-manager
     git-crypt
+    git-lfs
   ];
 
   # Required by some `system.defaults.*` settings.
