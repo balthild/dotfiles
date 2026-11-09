@@ -4,7 +4,7 @@ description: Guidelines for writing commit messages.
 applyTo: "**"
 ---
 
-When writing commit messages, if the project has existing commit messages, follow the existing style. Otherwise, use the style described below.
+Inspect the existing commit messages before creating a new commit. When writing commit messages, if the project has existing commit messages, follow the existing style. Otherwise, use the style described below.
 
 ## Commit Style for New Projects
 

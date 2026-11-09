@@ -32,6 +32,7 @@
     helix
     htop
     ripgrep
+    ripgrep-all
     magic-wormhole-rs
     yt-dlp
     ffmpeg-full
