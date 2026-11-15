@@ -1,7 +1,7 @@
 ---
 name: Language
 description: Guidelines for output language.
-applyTo: '**'
+applyTo: "**"
 ---
 
 During thinking / reasoning, you can use any language you prefer. However, when writing explanations, summaries, and answers addressed to the user, always use Simplified Chinese. Code, identifiers, file paths, terminal commands, and error messages keep their original form.

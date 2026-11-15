@@ -1,15 +1,15 @@
 [default]
 depends = [ #
-  "git",
-  "shell",
-  "helix",
-  "rime",
-  "copilot",
-  "wsl",
-  "shim",
-  "flow",
-  "misc",
-  "secret",
+	"git",
+	"shell",
+	"helix",
+	"rime",
+	"copilot",
+	"wsl",
+	"shim",
+	"flow",
+	"misc",
+	"secret",
 ]
 
 [git.files]
@@ -24,7 +24,6 @@ depends = [ #
 
 [rime.files]
 "rime" = "~/AppData/Roaming/Rime"
-"rime/options.windows.yaml" = "~/Library/Rime/options.platform.yaml"
 
 [wsl.files]
 "wsl/.wslconfig" = "~/.wslconfig"

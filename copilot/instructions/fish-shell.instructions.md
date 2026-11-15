@@ -1,7 +1,7 @@
 ---
 name: Fish Shell
 description: Things worth noting about Fish Shell.
-applyTo: '**'
+applyTo: "**"
 ---
 
 - Fish has no heredoc/nowdoc. Normal string literals already support multi-line.

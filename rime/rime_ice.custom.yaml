@@ -1,8 +1,5 @@
 # 配合雾凇拼音使用 https://github.com/iDvel/rime-ice
 patch:
-  # Bug：当这里有 __include 时，后面指定合并（+）的选项会变成整个覆盖
-  # __include: "rime_ice.custom.platform:/patch"
-
   punctuator/half_shape/+:
     "/": "、"
     "`": "·"
@@ -21,12 +18,10 @@ patch:
   ascii_composer/+:
     good_old_caps_lock: true
     switch_key:
-      __patch:
-        - options.platform:/switch_key
       Control_L: noop
       Control_R: noop
-      Shift_L: commit_code
-      Shift_R: commit_code
+      Shift_L: noop
+      Shift_R: noop
       Caps_Lock: commit_code
       Eisu_toggle: commit_code
 
@@ -55,22 +50,24 @@ patch:
 
   switches:
     - name: full_shape
-      states: [半, 全]
+      states: [ 半, 全 ]
       reset: 0
     - name: traditionalization
-      states: [简, 繁]
+      states: [ 简, 繁 ]
       reset: 0
     - name: ascii_punct
-      states: [¥, $]
+      states: [ ¥, $ ]
       reset: 0
     - name: emoji
-      states: [☠️, 😀]
+      states: [ ☠️, 😀 ]
       reset: 1
 
   editor:
     bindings:
-      Shift+BackSpace: delete_candidate
+      Shift+BackSpace: delete_candidate # 移除已记录的候选项优先级，通常会导致它在到候选项列表向后移动
+      Super+BackSpace: back_syllable
+      Alt+BackSpace: back_syllable
 
 bindings:
   __append:
-    # - { when: always, accept: Shift+space, toggle: full_shape }
+    - { when: always, accept: Shift+space, toggle: full_shape }

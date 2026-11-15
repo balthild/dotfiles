@@ -1,10 +1,10 @@
 [default]
 depends = [ #
-  "git",
-  "shell",
-  "helix",
-  "copilot",
-  "misc",
+	"git",
+	"shell",
+	"helix",
+	"copilot",
+	"misc",
 ]
 
 [git.files]

@@ -1,0 +1,123 @@
+{
+	"title": "Devices",
+	"rules": [
+		{
+			"description": "Devices: Swap Command and Option on External Keyboard",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "left_option",
+						"modifiers": { "optional": ["any"] }
+					},
+					"to": [
+						{ "key_code": "left_command" }
+					],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"is_built_in_keyboard": false,
+									"is_keyboard": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "left_command",
+						"modifiers": { "optional": ["any"] }
+					},
+					"to": [
+						{ "key_code": "left_option" }
+					],
+					"conditions": [
+						{
+							"identifiers": [
+								{
+									"is_built_in_keyboard": false,
+									"is_keyboard": true
+								}
+							],
+							"type": "device_if"
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "right_option",
+						"modifiers": { "optional": ["any"] }
+					},
+					"to": [
+						{ "key_code": "right_command" }
+					],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"is_built_in_keyboard": false,
+									"is_keyboard": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "right_command",
+						"modifiers": { "optional": ["any"] }
+					},
+					"to": [
+						{ "key_code": "right_option" }
+					],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"is_built_in_keyboard": false,
+									"is_keyboard": true
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "Devices: Disable Logitech M720 Mission Control Shortcut",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "up_arrow",
+						"modifiers": {
+							"mandatory": ["control"],
+							"optional": ["any"]
+						}
+					},
+					"to": [
+						{ "key_code": "vk_none" }
+					],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"vendor_id": 1133,
+									"product_id": 45077
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

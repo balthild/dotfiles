@@ -33,6 +33,7 @@
     htop
     ripgrep
     ripgrep-all
+    pandoc
     magic-wormhole-rs
     yt-dlp
     ffmpeg-full
@@ -77,6 +78,16 @@
     "$HOME/.local/share/npm/global/bin"
     "$HOME/go/bin"
   ];
+
+  # Remove CapsLock delay.
+  launchd.agents.caps-lock-delay = {
+    enable = true;
+    config = {
+      RunAtLoad = true;
+      KeepAlive = false;
+      ProgramArguments = [ "hidutil" "property" "--set" "{\"CapsLockDelayOverride\":0}" ];
+    };
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

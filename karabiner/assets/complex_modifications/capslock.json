@@ -1,0 +1,93 @@
+{
+	"title": "CapsLock",
+	"rules": [
+		{
+			"description": "CapsLock: Toggle ABC and Squirrel",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "caps_lock",
+						"modifiers": { "optional": ["any"] }
+					},
+					"to": [
+						{
+							"select_input_source": {
+								"input_source_id": "^im\\.rime\\.inputmethod\\.Squirrel\\.Hans$"
+							}
+						}
+					],
+					"conditions": [
+						{
+							"type": "input_source_if",
+							"input_sources": [
+								{ "input_source_id": "^com\\.apple\\.keylayout\\.ABC$" }
+							]
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "caps_lock",
+						"modifiers": { "optional": ["any"] }
+					},
+					"to": [
+						{
+							"select_input_source": {
+								"input_source_id": "^com\\.apple\\.keylayout\\.ABC$"
+							}
+						}
+					],
+					"conditions": [
+						{
+							"type": "input_source_if",
+							"input_sources": [
+								{ "input_source_id": "^im\\.rime\\.inputmethod\\.Squirrel\\.Hans$" }
+							]
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "caps_lock",
+						"modifiers": { "optional": ["any"] }
+					},
+					"to": [
+						{ "key_code": "vk_none" }
+					],
+					"conditions": [
+						{
+							"type": "input_source_unless",
+							"input_sources": [
+								{ "input_source_id": "^com\\.apple\\.keylayout\\.ABC$" },
+								{ "input_source_id": "^im\\.rime\\.inputmethod\\.Squirrel\\.Hans$" }
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "CapsLock: Send Ctrl-Space",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "caps_lock",
+						"modifiers": {
+							"optional": ["any"]
+						}
+					},
+					"to": [
+						{
+							"key_code": "spacebar",
+							"modifiers": ["left_control"]
+						}
+					]
+				}
+			]
+		}
+	]
+}

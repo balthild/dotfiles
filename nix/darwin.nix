@@ -77,6 +77,10 @@ in {
   system.defaults.NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
   system.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
 
+	# Mouse.
+	system.defaults.CustomUserPreferences.NSGlobalDomain."com.apple.mouse.scaling" = 1.5;
+	system.defaults.CustomUserPreferences.NSGlobalDomain."com.apple.mouse.linear" = false;
+
   # Other.
   system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
   system.defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;

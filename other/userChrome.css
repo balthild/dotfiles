@@ -1,53 +1,56 @@
 /* Move bookmark toolbar to bottom of window */
-:root:not([inDOMFullscreen]){
-  --custom-bookmark-toolbar-height: 32px;
+:root:not([inDOMFullscreen]) {
+	--custom-bookmark-toolbar-height: 32px;
 }
-#PersonalToolbar{
-  position: absolute;
-  left: 0px;
-  bottom: 0;
-  width: 100vw;
-  height: var(--custom-bookmark-toolbar-height);
-  align-items: center;
+#PersonalToolbar {
+	position: absolute;
+	left: 0px;
+	bottom: 0;
+	width: 100vw;
+	height: var(--custom-bookmark-toolbar-height);
+	align-items: center;
 }
 #browser,
 #customization-container {
-  margin-bottom: var(--custom-bookmark-toolbar-height);
-  border-bottom: 1px solid var(--chrome-content-separator-color) !important;
+	margin-bottom: var(--custom-bookmark-toolbar-height);
+	border-bottom: 1px solid var(--chrome-content-separator-color) !important;
 }
 
 /* Remove the dropdown menu after tabs */
 #alltabs-button {
-  display: none;
+	display: none;
 }
 
 /* Remove tab separators */
 .tab-stack::before, .tab-stack::after {
-  display: none;
+	display: none;
 }
 
 /* Windows 10 styled tab indicator line */
 .tabbrowser-tab {
-  --tab-context-line-gap: 16px;
+	--tab-context-line-gap: 16px;
 }
 .tabbrowser-tab:not(:hover):not([selected="true"], [multiselected]) .tab-context-line {
-  background-color: rgba(0, 0, 0, 0.25) !important;
-  opacity: 0.8 !important;
-  transform: scaleX(1) translateX(calc(var(--tab-context-line-gap) / 2)) !important;
-  width: calc(100% - var(--tab-context-line-gap));
+	background-color: rgba(0, 0, 0, 0.25) !important;
+	opacity: 0.8 !important;
+	transform: scaleX(1) translateX(calc(var(--tab-context-line-gap) / 2)) !important;
+	width: calc(100% - var(--tab-context-line-gap));
 }
-.tabbrowser-tab:hover:not([selected="true"], [multiselected]) > .tab-stack > .tab-background > .tab-context-line {
-  background-color: rgba(0, 0, 0, 0.25) !important;
-  width: 100%;
+.tabbrowser-tab:hover:not([selected="true"], [multiselected])
+	> .tab-stack
+	> .tab-background
+	> .tab-context-line {
+	background-color: rgba(0, 0, 0, 0.25) !important;
+	width: 100%;
 }
 .tabbrowser-tab:not([selected="true"], [multiselected]) .tab-context-line {
-  transition:
-    width 250ms var(--animation-easing-function),
-    transform 250ms var(--animation-easing-function),
-    opacity 250ms var(--animation-easing-function) !important;
+	transition:
+		width 250ms var(--animation-easing-function),
+		transform 250ms var(--animation-easing-function),
+		opacity 250ms var(--animation-easing-function) !important;
 }
 
 /* Remove the space before tabs */
 .titlebar-spacer[type="pre-tabs"] {
-  display: none;
+	display: none;
 }

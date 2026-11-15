@@ -1,14 +1,15 @@
 [default]
 depends = [ #
-  "git",
-  "shell",
-  "helix",
-  "rime",
-  "copilot",
-  "nix",
-  "misc",
-  "secret",
-  "brew",
+	"git",
+	"shell",
+	"helix",
+	"rime",
+	"copilot",
+	"nix",
+	"misc",
+	"secret",
+	"karabiner",
+	"brew",
 ]
 
 [git.files]
@@ -22,7 +23,9 @@ depends = [ #
 [rime.files]
 # "rime" = "~/.local/share/fcitx5/rime/"
 "rime" = "~/Library/Rime/"
-"rime/options.macos.yaml" = "~/Library/Rime/options.platform.yaml"
+
+[karabiner.files]
+"karabiner" = { target = "~/.config/karabiner", type = "symbolic", recurse = false }
 
 [brew.files]
 "brew" = "/opt/homebrew/Library/Taps/balthild/homebrew-dotfiles"
