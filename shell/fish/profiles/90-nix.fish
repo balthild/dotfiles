@@ -2,9 +2,9 @@ if not command -q nix
   return 0
 end
 
-abbr -a nix-apply 'sudo darwin-rebuild switch --flake ~/.dotfiles/nix'
-abbr -a nix-plan 'darwin-rebuild build --dry-run --flake ~/.dotfiles/nix'
-abbr -a nix-browse 'nix-tree --derivation ~/.dotfiles/nix#darwinConfigurations.Balthild-Mac.system'
+abbr -a nix-apply 'sudo darwin-rebuild switch --flake ~/.dotfiles'
+abbr -a nix-plan 'darwin-rebuild build --dry-run --flake ~/.dotfiles'
+abbr -a nix-browse 'nix-tree --derivation ~/.dotfiles#darwinConfigurations.Balthild-Mac.system'
 abbr -a nix-locate 'nix run github:nix-community/nix-index-database'
 
 function nix-wtf -w 'nix-shell -p' -a name
@@ -13,8 +13,8 @@ function nix-wtf -w 'nix-shell -p' -a name
     return 1
   end
 
-  set -l revision (jq '.nodes.nixpkgs.locked.rev' ~/.dotfiles/nix/flake.lock --raw-output)
-  set -l output (nix eval --inputs-from ~/.dotfiles/nix --raw "nixpkgs#$name.outPath")
+  set -l revision (jq '.nodes.nixpkgs.locked.rev' ~/.dotfiles/flake.lock --raw-output)
+  set -l output (nix eval --inputs-from ~/.dotfiles --raw "nixpkgs#$name.outPath")
   set -l builds "https://hydra.nixos.org/job/nixpkgs/unstable/$name.aarch64-darwin"
   set -l releases "https://hydra.nixos.org/job/nixpkgs/unstable/unstable"
 

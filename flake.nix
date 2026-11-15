@@ -1,5 +1,5 @@
 {
-  description = "Example nix-darwin system flake";
+  description = "nix-darwin system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -10,11 +10,11 @@
   };
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }: {
-    # Configurations per system. The name should match the hostname
+    # Configurations per system. The name should match the hostname.
     darwinConfigurations = {
       "Balthild-Mac" = nix-darwin.lib.darwinSystem {
         modules = [
-          ./darwin.nix
+          ./nix/darwin.nix
           home-manager.darwinModules.home-manager
         ];
         specialArgs = { inherit inputs; };

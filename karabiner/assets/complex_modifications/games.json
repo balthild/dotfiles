@@ -1,0 +1,36 @@
+{
+	"title": "Games",
+	"rules": [
+		{
+			"description": "Games: Map Mouse Side Buttons to G/T in NTE",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"pointing_button": "button4"
+					},
+					"to": [
+						{ "key_code": "g" }
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"pointing_button": "button5"
+					},
+					"to": [
+						{ "key_code": "t" }
+					],
+					"conditions": [
+						{
+							"type": "frontmost_application_if",
+							"bundle_identifiers": [
+								"^com\\.pwrd\\.yh\\.ios$"
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

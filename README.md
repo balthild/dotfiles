@@ -60,18 +60,18 @@ dotter deploy
 
 ### Nix
 
-- [nix-darwin](https://github.com/LnL7/nix-darwin)
+- [nix-darwin](https://github.com/nix-darwin/nix-darwin)
 
 First-time installation:
 
 ```shell
-nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/.dotfiles/nix
+nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/.dotfiles
 ```
 
 Check for changes:
 
 ```shell
-darwin-rebuild build --dry-run --flake ~/.dotfiles/nix
+darwin-rebuild build --dry-run --flake ~/.dotfiles
 # or the shell alias
 nix-plan
 ```
@@ -79,7 +79,7 @@ nix-plan
 Apply changes:
 
 ```shell
-darwin-rebuild -- switch --flake ~/.dotfiles/nix
+darwin-rebuild -- switch --flake ~/.dotfiles
 # or the shell alias
 nix-apply
 ```
@@ -107,24 +107,14 @@ scoop install elvish starship carapace-bin
 
 ### Rime
 
+- [Rimeka](https://github.com/balthild/rimeka)
 - [雾凇拼音](https://github.com/iDvel/rime-ice)
 - [万象语法模型](https://github.com/amzxyz/RIME-LMDG)
 
 Install the schema:
 
 ```shell
-# Install with Rimeka
 rimeka iDvel/rime-ice:others/recipes/full
-
-# Install with /plum/
-bash rime-install iDvel/rime-ice:others/recipes/full
-```
-
-Weasel 0.11+ has plum (rime-install) out of the box, located at ｢输入法设定｣ — ｢获取更多输入方案｣. After bootstrapping:
-
-```shell
-cd ~/AppData/Roaming/plum
-./rime-install iDvel/rime-ice:others/recipes/full
 ```
 
 Install the model:
