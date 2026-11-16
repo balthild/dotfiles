@@ -115,16 +115,21 @@ scoop install elvish starship carapace-bin
 
 - [Rimeka](https://github.com/balthild/rimeka)
 - [雾凇拼音](https://github.com/iDvel/rime-ice)
-- [万象语法模型](https://github.com/amzxyz/RIME-LMDG)
+- [白霜拼音](https://github.com/gaboolic/rime-frost)
+- [万象语法模型](https://github.com/amzxyz/rime-wanxiang-data)
+- [墨奇语法模型](https://github.com/gaboolic/rime-build-grammar)
 
 Install the schema:
 
 ```shell
 rimeka iDvel/rime-ice:others/recipes/full
+rimeka gaboolic/rime-frost:others/recipes/full
 ```
 
 Install the model:
 
 ```shell
-wget -O ~/Library/Rime/wanxiang-lts-zh-hans.gram https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram
+cd ~/Library/Rime
+wget https://github.com/amzxyz/rime-wanxiang-data/releases/download/LTS/wanxiang-lts-zh-hans.gram
+wget https://github.com/gaboolic/rime-build-grammar/releases/download/1.0.0/rime-moqi-zh.gram
 ```
