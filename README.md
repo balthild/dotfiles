@@ -22,9 +22,15 @@ scoop install git git-crypt dotter
 Clone the repository to `~/.dotfiles`:
 
 ```shell
-cd ~
-git clone https://github.com/balthild/dotfiles .dotfiles
-cd .dotfiles
+git clone https://github.com/balthild/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+```
+
+Unlock the encrypted files:
+
+```shell
+op read "op://Personal/dotfiles/dotfiles" --no-newline | git-crypt unlock /dev/stdin
+# or with key file
 git-crypt unlock ~/path/to/key
 ```
 
