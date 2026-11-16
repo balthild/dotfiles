@@ -1,35 +1,6 @@
-# 配合雾凇拼音使用 https://github.com/iDvel/rime-ice
+# 雾凇拼音 https://github.com/iDvel/rime-ice
+
 patch:
-  punctuator/half_shape/+:
-    "/": "、"
-    "`": "·"
-    "[": "「"
-    "]": "」"
-    "{": "『"
-    "}": "』"
-  punctuator/full_shape/+:
-    "/": "、"
-    "`": "·"
-    "[": "“"
-    "]": "”"
-    "{": "‘"
-    "}": "’"
-
-  ascii_composer/+:
-    good_old_caps_lock: true
-    switch_key:
-      Control_L: noop
-      Control_R: noop
-      Shift_L: noop
-      Shift_R: noop
-      Caps_Lock: commit_code
-      Eisu_toggle: commit_code
-
-  key_binder/bindings/+:
-    __patch:
-      - key_bindings:/paging_with_comma_period
-      - /bindings
-
   reduce_english_filter/+:
     mode: none
   custom_reduce_english_filter/+:
@@ -48,26 +19,8 @@ patch:
   # translator/max_homophones: 7
   # translator/max_homographs: 7
 
-  switches:
-    - name: full_shape
-      states: [ 半, 全 ]
-      reset: 0
-    - name: traditionalization
-      states: [ 简, 繁 ]
-      reset: 0
-    - name: ascii_punct
-      states: [ ¥, $ ]
-      reset: 0
-    - name: emoji
-      states: [ ☠️, 😀 ]
-      reset: 1
-
   editor:
     bindings:
       Shift+BackSpace: delete_candidate # 移除已记录的候选项优先级，通常会导致它在到候选项列表向后移动
       Super+BackSpace: back_syllable
       Alt+BackSpace: back_syllable
-
-bindings:
-  __append:
-    - { when: always, accept: Shift+space, toggle: full_shape }

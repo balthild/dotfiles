@@ -1,0 +1,28 @@
+# 白霜拼音 https://github.com/gaboolic/rime-frost
+
+patch:
+  reduce_english_filter/+:
+    mode: none
+  custom_reduce_english_filter/+:
+    idx: 5
+  engine/filters/+:
+    - lua_filter@*custom_reduce_english_filter
+
+  radical_lookup/prefix: "u"
+  recognizer/patterns/radical_lookup: "^u[a-z]+$"
+
+  grammar:
+    language: rime-moqi-zh
+    non_collocation_penalty: -4
+    collocation_max_length: 5
+    collocation_min_length: 2
+    collocation_penalty: -14
+  translator/contextual_suggestions: true
+  translator/max_homophones: 4
+  translator/max_homographs: 2
+
+  editor:
+    bindings:
+      Shift+BackSpace: delete_candidate # 移除已记录的候选项优先级，通常会导致它在到候选项列表向后移动
+      Super+BackSpace: back_syllable
+      Alt+BackSpace: back_syllable

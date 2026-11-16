@@ -1,0 +1,40 @@
+patch:
+  menu/page_size: 6
+
+  schema_list:
+    - schema: rime_frost
+    - schema: rime_ice
+
+  punctuator/half_shape/+:
+    "/": "、"
+    "`": "·"
+    "[": "「"
+    "]": "」"
+    "{": "『"
+    "}": "』"
+  punctuator/full_shape/+:
+    "/": "、"
+    "`": "·"
+    "[": "“"
+    "]": "”"
+    "{": "‘"
+    "}": "’"
+
+  ascii_composer/+:
+    good_old_caps_lock: true
+    switch_key:
+      Control_L: noop
+      Control_R: noop
+      Shift_L: noop
+      Shift_R: noop
+      Caps_Lock: commit_code
+      Eisu_toggle: commit_code
+
+  key_binder/bindings/+:
+    __patch:
+      - key_bindings:/paging_with_comma_period
+      - /bindings
+
+bindings:
+  __append:
+    - { when: always, accept: Shift+space, toggle: full_shape }
