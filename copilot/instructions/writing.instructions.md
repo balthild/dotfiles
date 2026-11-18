@@ -1,14 +1,14 @@
 ---
-name: Comment
-description: Guidelines for writing and maintaining code comments.
+name: Writing
+description: Guidelines for writing and maintaining comments or docs.
 applyTo: "**"
 ---
 
-# Comment Instructions
-
 ## Purpose
 
-Comments carry the intent that code cannot express by itself: the reasons behind a decision, the constraints it respects, and the assumptions it depends on. Every comment exists to serve the readability, understandability, and maintainability of the code. Treat every comment as a maintenance obligation, not as a decoration.
+Comments or internal docs carry the intent that code cannot express by itself: the reasons behind a decision, the constraints it respects, and the assumptions it depends on.
+
+Unlike normal docs which are user-facing, internal docs are for developer or agents. For example, `README.md` is usually considered a normal doc, but `AGENTS.md` is an internal doc.
 
 ## Write a comment when
 
@@ -24,11 +24,22 @@ Comments carry the intent that code cannot express by itself: the reasons behind
 - A name, a type, or a test can carry the information instead. Prefer the rename.
 - The information belongs to version history: no changelog entries, no author tags, no dates.
 - The line is dead. Delete commented-out code rather than keeping it "just in case".
-- The information is a **trivial design decision**: the width of a UI element, how something looks, or a specific behavior of the product. When such behavior must be documented, state the purpose of the whole module once, at the natural place in modular, single-responsibility code, rather than annotating each fragment.
+- The information is a **trivial design decision**: a specific look & feel or specific behavior of the product. When such decisions must be documented, state the purpose of the whole module once, at the natural place in modular, single-responsibility code, rather than annotating each fragment.
+
+## Write an internal doc when
+
+- The code has some engineering or architectural design need to be recorded and become a systematic constraint.
+- The code interacts with an external condition (e.g. hardware, operating system, external services, etc.) and the knowledge of its mechanisms or behavior is required to understand the code.
+- You have the reasons above to write a comment, but you want to write more detailed explanation that doesn't fit into a short comment.
+
+## Do not write an internal doc when
+
+- Describing knowledge about this developer's specific computer or environment, which is better to be put into memory. Exception: when a personal environment represents a certain type of situation concerned by the project, it becomes project-level knowledge after stripping personal info.
 
 ## Style
 
-- Prefer one clear sentence over a paragraph. Delete the comment if you cannot make it shorter than the code it explains. Exception: when the code interacts with an external condition (e.g. the operating system) and knowledge of some of its mechanisms or behavior is required to understand the code, a longer comment explaining that external condition is allowed — but still state it as concisely as intelligibility permits.
+- Prefer few concise, simple, and clear sentences over long paragraph. You are not to write thesis with advanced grammar to charm your english teacher, but to deliver information efficiently.
+- Joining multiple sentences into one with `;` is **strongly discourged**, unless the sentences cant express its desired meaning if kept separate.
 - Keep line comments on their own line above the code they describe, never trailing a statement, except for short annotations on data or configuration entries.
 - Match the surrounding file's language for prose comments; keep identifiers, paths, and error messages in the language they appear in the code.
 - Mark unfinished work with a scannable tag and a reason: `TODO:`, `FIXME:`, `NOTE:`, `HACK:`. Prefer a tracking reference over a bare tag.
@@ -43,6 +54,6 @@ Group code by **responsibility**, never by length: do not split or merge section
 
 ## Maintenance
 
-- Update or delete a comment in the same change that makes it inaccurate. A stale comment is a defect: it misleads more than a missing one.
+- Update or delete comments or docs in the same change that makes it inaccurate. A stale text is a defect: it misleads more than a missing one.
 - Keep public doc comments in sync with the signature, and remove them when a symbol stops being public.
 - Treat comment accuracy as a review concern, on par with the code around it.

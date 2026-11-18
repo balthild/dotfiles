@@ -18,3 +18,5 @@ _ignored_*
 
 .ccls-cache/
 .cache/clangd/
+.clice/
+clice.toml
