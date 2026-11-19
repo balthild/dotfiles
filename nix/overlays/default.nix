@@ -4,6 +4,7 @@ final: prev: {
   carapace = prev.callPackage ./carapace.nix { carapace = prev.carapace; };
   yarn-switch = prev.callPackage ./yarn-switch.nix { };
 
+  mouse-accel = prev.callPackage ./mouse-accel { };
   real-esrgan-ncnn-vulkan = prev.callPackage ./realesrgan-ncnn-vulkan { };
 
   # https://lix.systems/add-to-config/#advanced-change

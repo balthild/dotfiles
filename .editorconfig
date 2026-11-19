@@ -10,7 +10,7 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 
-[**.{nix,fish,elv,nu,js,lua,rb,pl,css,toml,json,jsonc}]
+[**.{nix,fish,elv,nu,js,lua,rb,pl,c,h,css,toml,json,jsonc}]
 indent_style = tab
 indent_size = 2
 

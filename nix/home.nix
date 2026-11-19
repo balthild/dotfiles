@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, config, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -86,6 +86,17 @@
       RunAtLoad = true;
       KeepAlive = false;
       ProgramArguments = [ "hidutil" "property" "--set" "{\"CapsLockDelayOverride\":0}" ];
+    };
+  };
+
+	# Mouse pointer acceleraton.
+  launchd.agents.mouse-accel = {
+    enable = true;
+    config = {
+      RunAtLoad = true;
+      KeepAlive = true;
+      ProgramArguments = [ "${lib.getExe pkgs.mouse-accel}" ];
+      StandardErrorPath = "${config.home.homeDirectory}/Library/Logs/mouse-accel.log";
     };
   };
 

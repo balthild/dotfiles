@@ -11,6 +11,14 @@
 					},
 					"to": [
 						{ "key_code": "g" }
+					],
+					"conditions": [
+						{
+							"type": "frontmost_application_if",
+							"bundle_identifiers": [
+								"^com\\.pwrd\\.yh\\.ios$"
+							]
+						}
 					]
 				},
 				{

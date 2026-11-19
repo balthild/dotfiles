@@ -77,7 +77,8 @@ in {
   system.defaults.NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
   system.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
 
-	# Mouse.
+	# Mouse and Trackpad.
+	system.defaults.CustomUserPreferences.NSGlobalDomain."com.apple.trackpad.scaling" = 1.5;
 	system.defaults.CustomUserPreferences.NSGlobalDomain."com.apple.mouse.scaling" = 1.5;
 	system.defaults.CustomUserPreferences.NSGlobalDomain."com.apple.mouse.linear" = false;
 

@@ -25,7 +25,7 @@ depends = [ #
 "rime" = "~/Library/Rime/"
 
 [karabiner.files]
-"karabiner" = { target = "~/.config/karabiner", type = "symbolic", recurse = false }
+"karabiner" = "~/.config/karabiner/assets/complex_modifications"
 
 [brew.files]
 "brew" = "/opt/homebrew/Library/Taps/balthild/homebrew-dotfiles"
