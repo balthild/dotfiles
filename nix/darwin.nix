@@ -1,8 +1,6 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
-let
-  overlays = import ./overlays { inherit inputs; };
-in {
+{
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
@@ -14,7 +12,7 @@ in {
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   # Custom packages.
-  nixpkgs.overlays = [ overlays ];
+  nixpkgs.overlays = [ (import ./overlays) ];
 
   # Packages in the system profile.
   environment.systemPackages = with pkgs; [
@@ -54,6 +52,12 @@ in {
   # Scheduled tasks for the nix store.
   nix.gc.automatic = true;
   nix.optimise.automatic = true;
+
+	# Disable global registry except for nixpkgs.
+	nix.settings.flake-registry = "";
+	nix.registry = {
+		nixpkgs.flake = inputs.nixpkgs;
+	};
 
   # Dock and Mission Control.
   system.defaults.dock.orientation = "left";

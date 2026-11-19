@@ -1,5 +1,3 @@
-{ ... }:
-
 final: prev: {
   carapace = prev.callPackage ./carapace.nix { carapace = prev.carapace; };
   yarn-switch = prev.callPackage ./yarn-switch.nix { };
