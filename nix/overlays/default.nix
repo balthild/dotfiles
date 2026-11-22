@@ -1,9 +1,7 @@
 final: prev: {
   carapace = prev.callPackage ./carapace.nix { carapace = prev.carapace; };
-  yarn-switch = prev.callPackage ./yarn-switch.nix { };
-
   mouse-accel = prev.callPackage ./mouse-accel { };
-  real-esrgan-ncnn-vulkan = prev.callPackage ./realesrgan-ncnn-vulkan { };
+  h3image-ncnn-vulkan = prev.callPackage ./h3image-ncnn-vulkan.nix { };
 
   # https://lix.systems/add-to-config/#advanced-change
   inherit (prev.lixPackageSets.stable)

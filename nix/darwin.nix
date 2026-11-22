@@ -83,7 +83,7 @@
 
 	# Mouse and Trackpad.
 	system.defaults.CustomUserPreferences.NSGlobalDomain."com.apple.trackpad.scaling" = 1.5;
-	system.defaults.CustomUserPreferences.NSGlobalDomain."com.apple.mouse.scaling" = 1.5;
+	system.defaults.CustomUserPreferences.NSGlobalDomain."com.apple.mouse.scaling" = 2.0;
 	system.defaults.CustomUserPreferences.NSGlobalDomain."com.apple.mouse.linear" = false;
 
   # Other.
