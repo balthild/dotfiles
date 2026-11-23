@@ -3,7 +3,7 @@ patch:
 
   schema_list:
     - schema: rime_frost
-    - schema: rime_ice
+    # - schema: rime_ice
 
   punctuator/half_shape/+:
     "/": "、"

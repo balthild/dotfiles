@@ -1,12 +1,19 @@
 # 白霜拼音 https://github.com/gaboolic/rime-frost
 
 patch:
+  engine/filters/+:
+    - lua_filter@*custom_reduce_english_filter
+
   reduce_english_filter/+:
     mode: none
   custom_reduce_english_filter/+:
     idx: 5
-  engine/filters/+:
-    - lua_filter@*custom_reduce_english_filter
+
+  pin_cand_filter:
+    - w	我
+    - l	了
+    - miao	喵
+    - wu	呜
 
   radical_lookup/prefix: "u"
   recognizer/patterns/radical_lookup: "^u[a-z]+$"
