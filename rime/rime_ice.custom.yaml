@@ -19,6 +19,20 @@ patch:
   # translator/max_homophones: 7
   # translator/max_homographs: 7
 
+  switches:
+    - name: full_shape
+      states: [ 半, 全 ]
+      reset: 0
+    - name: traditionalization
+      states: [ 简, 繁 ]
+      reset: 0
+    - name: ascii_punct
+      states: [ ¥, $ ]
+      reset: 0
+    - name: emoji
+      states: [ ☠️, 😀 ]
+      reset: 1
+
   editor:
     bindings:
       Shift+BackSpace: delete_candidate # 移除已记录的候选项优先级，通常会导致它在到候选项列表向后移动
