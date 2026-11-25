@@ -6,15 +6,9 @@ patch:
 
   reduce_english_filter/+:
     mode: none
-  custom_reduce_english_filter/+:
-    idx: 5
 
   pin_cand_filter:
-    - w	我
-    - l	了
-    - miao	喵
-    - wu	呜 唔
-    - na	那
+    __include: default:/pin_cand_filter
 
   grammar:
     language: rime-moqi-zh
@@ -25,24 +19,8 @@ patch:
   translator/contextual_suggestions: true
 
   switches:
-    - name: full_shape
-      states: [ 半, 全 ]
-      reset: 0
-    - name: traditionalization
-      states: [ 简, 繁 ]
-      reset: 0
-    - name: ascii_punct
-      states: [ ¥, $ ]
-      reset: 0
-    - name: emoji
-      states: [ ☠️, 😀 ]
-      reset: 1
-    - name: pin_cand
-      states: [ 固顶关, 固顶开 ]
-      reset: 1
+    __include: default:/switches
 
   editor:
     bindings:
-      Shift+BackSpace: delete_candidate # 移除已记录的候选项优先级，通常会导致它在到候选项列表向后移动
-      Super+BackSpace: back_syllable
-      Alt+BackSpace: back_syllable
+      __include: default:/editor/bindings

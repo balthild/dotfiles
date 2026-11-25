@@ -39,7 +39,6 @@
     ffmpeg-full
     wget
     mitmproxy
-		h3image-ncnn-vulkan
 
     # Dev (language-specific)
     rustup

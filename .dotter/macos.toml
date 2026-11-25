@@ -21,7 +21,6 @@ depends = [ #
 "shell/nushell" = "~/Library/Application Support/nushell/"
 
 [rime.files]
-# "rime" = "~/.local/share/fcitx5/rime/"
 "rime" = "~/Library/Rime/"
 
 [karabiner.files]

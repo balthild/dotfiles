@@ -118,18 +118,20 @@ scoop install elvish starship carapace-bin
 - [白霜拼音](https://github.com/gaboolic/rime-frost)
 - [万象语法模型](https://github.com/amzxyz/rime-wanxiang-data)
 - [墨奇语法模型](https://github.com/gaboolic/rime-build-grammar)
+- [rime-qwen-freq](https://github.com/mizorewww/rime-qwen-freq)
 
-Install the schema:
+Install schemas:
 
 ```shell
 rimeka iDvel/rime-ice:others/recipes/full
 rimeka gaboolic/rime-frost:others/recipes/full
 ```
 
-Install the model:
+Install models:
 
 ```shell
 cd ~/Library/Rime
 wget https://github.com/amzxyz/rime-wanxiang-data/releases/download/LTS/wanxiang-lts-zh-hans.gram
 wget https://github.com/gaboolic/rime-build-grammar/releases/download/1.0.0/rime-moqi-zh.gram
+wget https://github.com/mizorewww/rime-qwen-freq/releases/download/v0.4.0/qwen14b-zh-hans.gram.gz && gzip -d qwen14b-zh-hans.gram.gz
 ```

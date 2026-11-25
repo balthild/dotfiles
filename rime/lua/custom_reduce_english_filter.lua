@@ -1,13 +1,10 @@
--- Modified from https://github.com/iDvel/rime-ice/blob/main/lua/reduce_english_filter.lua
+-- Derived from https://github.com/iDvel/rime-ice/blob/main/lua/reduce_english_filter.lua
 
 local M = {}
 
 function M.init(env)
-	local config = env.engine.schema.config
-	env.name_space = env.name_space:gsub("^*", "")
-
 	-- the index to put english words
-	M.idx = config:get_int(env.name_space .. "/idx")
+	M.idx = 5
 end
 
 function M.func(input, env)
