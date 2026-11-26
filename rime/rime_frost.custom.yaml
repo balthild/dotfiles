@@ -2,7 +2,7 @@
 
 patch:
   engine/filters/+:
-    - lua_filter@*custom_reduce_english_filter
+    - lua_filter@*custom_reduce_english
 
   reduce_english_filter/+:
     mode: none
@@ -10,13 +10,14 @@ patch:
   pin_cand_filter:
     __include: default:/pin_cand_filter
 
+  translator/contextual_suggestions: true
+
   grammar:
     language: rime-moqi-zh
     non_collocation_penalty: -6
     collocation_max_length: 5
     collocation_min_length: 2
     collocation_penalty: -14
-  translator/contextual_suggestions: true
 
   switches:
     __include: default:/switches

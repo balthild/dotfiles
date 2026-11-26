@@ -2,8 +2,8 @@
 
 patch:
   engine/filters/+:
-    - lua_filter@*custom_reduce_english_filter
-    - lua_filter@*is_in_user_dict
+    - lua_filter@*custom_reduce_english
+    - lua_filter@*custom_candidate_comment
 
   reduce_english_filter/+:
     mode: none
@@ -14,13 +14,18 @@ patch:
   radical_lookup/prefix: "u"
   recognizer/patterns/radical_lookup: "^u[a-z]+$"
 
-  # grammar:
-  #   language: wanxiang-lts-zh-hans
-  #   collocation_max_length: 5
-  #   collocation_min_length: 2
-  # translator/contextual_suggestions: true
-  # translator/max_homophones: 7
-  # translator/max_homographs: 7
+  translator/contextual_suggestions: true
+  translator/max_homophones: 8
+  translator/max_homographs: 8
+
+  grammar:
+    language: wanxiang-lts-zh-hans
+    collocation_max_length: 6
+    collocation_min_length: 2
+    collocation_penalty: -14
+    non_collocation_penalty: -6
+    weak_collocation_penalty: -100
+    rear_penalty: -18
 
   switches:
     __include: default:/switches
