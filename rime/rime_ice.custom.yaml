@@ -6,6 +6,7 @@ patch:
     - lua_filter@*custom_reduce_english
     - lua_filter@*custom_candidate_comment
 
+  is_in_user_dict: false
   pin_cand_filter: []
   reduce_english_filter/+:
     mode: none

@@ -48,10 +48,10 @@ end
 
 --- @param env Env
 function M.func(input, env)
-	-- 当前输入框的 preedit，未经过方案 translator/preedit_format 转换
-	-- 输入「nihaoshij」则为「nihaoshij」，选择了「你好」后变成「你好shij」
+	-- 当前输入框的 preedit，未经过 translator/preedit_format 转换
+	-- 输入「nihaoshij」则为 "nihaoshij"，选择了「你好」后变成 "你好shij"
 	local preedit_full = env.engine.context:get_preedit().text
-	-- 非汉字部分的 preedit，如「shij」
+	-- 非汉字部分的 preedit，如 "shij"
 	local preedit_tail = string.gsub(preedit_full, "[^a-zA-Z]", "")
 
 	-- 只有整个 preedit_tail 都匹配时才重排，其余情况原样输出
@@ -69,6 +69,9 @@ function M.func(input, env)
 
 	for candidate in input:iter() do
 		local preedit = candidate.preedit:gsub(" ", "")
+
+		-- 候选项按 preedit 从长到短排列，最长就是完整 tail，因此只要出现一个不匹配的候选项，后面就不会再有匹配的了
+		-- 如果有其他 filter 重排了候选项，这个前提就不再成立，但为了避免不必要地迭代输入流造成开销，此处不处理这种情况
 		if preedit ~= preedit_tail then
 			table.insert(others, candidate)
 			break
@@ -82,7 +85,7 @@ function M.func(input, env)
 			table.insert(others, candidate)
 		end
 
-		-- 找齐了或查询超过 100 个就不找了，如果要固顶的候选项不在前 100 就不会被固顶
+		-- 找齐了或尝试超过 100 次就不找了，如果要置顶的候选项不在前 100 就不会被置顶
 		if found == #pin.texts or #others > 100 then
 			break
 		end
