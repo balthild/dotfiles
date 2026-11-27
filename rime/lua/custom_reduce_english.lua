@@ -2,9 +2,13 @@
 
 local M = {}
 
-function M.init(env)
+M.config = {
 	-- the index to put english words
-	M.idx = 5
+	index = 5,
+}
+
+function M.init(env)
+	--
 end
 
 function M.func(input, env)
@@ -26,7 +30,7 @@ function M.func(input, env)
 		end
 
 		-- yield pending english words
-		if index >= M.idx + #pending - 1 then
+		if index >= M.config.index + #pending - 1 then
 			for _, word in ipairs(pending) do
 				yield(word)
 			end

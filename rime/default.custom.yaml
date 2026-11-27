@@ -22,14 +22,6 @@ patch:
     "{": "‘"
     "}": "’"
 
-  pin_cand_filter:
-    - w	我
-    - l	了
-    - miao	喵
-    - wu	唔 呜
-    - na	那
-    - zan	咱
-
   ascii_composer/+:
     good_old_caps_lock: true
     switch_key:

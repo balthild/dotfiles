@@ -2,13 +2,12 @@
 
 patch:
   engine/filters/+:
+    - lua_filter@*custom_pin_candidate
     - lua_filter@*custom_reduce_english
 
+  pin_cand_filter: []
   reduce_english_filter/+:
     mode: none
-
-  pin_cand_filter:
-    __include: default:/pin_cand_filter
 
   translator/contextual_suggestions: true
 
